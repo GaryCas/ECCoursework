@@ -57,7 +57,7 @@ public class BotEntity extends Bot {
         botCompiler = new BotCompiler(botName, memberGen, memberID, this);
     }
 
-      public int[] initGenes() {
+    public int[] initGenes() {
         for (int i = 0; i < genome.length; i++) {
             this.genome[i] = initGene();
         }
@@ -74,10 +74,8 @@ public class BotEntity extends Bot {
         return gene;
     }
 
-
     @Override
     public String translateGenotype(){
-
         for (int gene : genome) {
             phenotype.concat(geneEvaluator.translateGene(gene));
         }
@@ -110,12 +108,8 @@ public class BotEntity extends Bot {
         return genome;
     }
 
-    public void setGeneInitialiser(GeneInitialiser geneInitialiser) {
+    void setGeneInitialiser(GeneInitialiser geneInitialiser) {
         this.geneInitialiser = geneInitialiser;
-    }
-
-    public void setGeneEvaluator(GeneEvaluator geneEvaluator) {
-        this.geneEvaluator = geneEvaluator;
     }
 
     // if I can separate these into their own classes then unit tests and setting might be a bit cleaner
@@ -159,13 +153,12 @@ public class BotEntity extends Bot {
             return behaviourStrategy;
         }
 
-
-        private int extractSmallValue(int gene) {
-            return gene - (gene % 10);
+        int extractSmallValue(int gene) {
+            return gene % 10;
         }
 
-        private int extractLargeValue(int gene) {
-            return gene - (gene % 100);
+        int extractLargeValue(int gene) {
+            return (gene % 1000)/10;
         }
 
         int extractActionNBase(int gene) {
@@ -175,8 +168,6 @@ public class BotEntity extends Bot {
         int extractEventNBase(int gene) {
             return gene - (gene % 10000);
         }
-
-
     }
 
     class GeneInitialiser {

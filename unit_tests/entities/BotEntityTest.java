@@ -195,12 +195,15 @@ public class BotEntityTest {
     }
 
     @Test
-    public void shouldInterpretValuesIntProperly() {
+    public void shouldExtractSmallValueInt() {
         //given
 
         //when
 
         //then
+        assertEquals(1,botEntity.geneEvaluator.extractSmallValue(11111));
+        assertEquals(11,botEntity.geneEvaluator.extractLargeValue(11111));
+
     }
 
     @Test
