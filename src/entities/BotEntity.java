@@ -77,8 +77,9 @@ public class BotEntity extends Bot {
 
     @Override
     public String translateGenotype(){
+
         for (int gene : genome) {
-            geneEvaluator.translateGene(gene);
+            phenotype.concat(geneEvaluator.translateGene(gene));
         }
 
         return phenotype;
@@ -117,6 +118,7 @@ public class BotEntity extends Bot {
         this.geneEvaluator = geneEvaluator;
     }
 
+    // if I can separate these into their own classes then unit tests and setting might be a bit cleaner
     class GeneEvaluator{
         BehaviourStrategy behaviourStrategy;
 
@@ -179,26 +181,25 @@ public class BotEntity extends Bot {
 
     class GeneInitialiser {
 
-    int initEventsInt () {
-        e += 10000;
-        return e;
-    }
-
-    int initActionsInt() {
-        return getRandom().nextInt(2)*1000;
-    }
-
-    int initValuesInt() {
-        return getRandom().nextInt(1000);
-    }
-
-
-    public Random getRandom() {
-        if (randy == null) {
-            randy = new Random();
+        int initEventsInt () {
+            e += 10000;
+            return e;
         }
-        return randy;
-    }
+
+        int initActionsInt() {
+            return getRandom().nextInt(2)*1000;
+        }
+
+        int initValuesInt() {
+            return getRandom().nextInt(1000);
+        }
+
+        Random getRandom() {
+            if (randy == null) {
+                randy = new Random();
+            }
+            return randy;
+        }
 }
 
 }
