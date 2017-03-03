@@ -125,8 +125,8 @@ public class ECRunner {
     public void initGeneration() {
             for (int i = 0; i < POP_SIZE; i++) {
                 currentGeneration[i] = new BotEntity(0, i);
-                currentGeneration[i].init();
-                currentGeneration[i].createCode();
+                currentGeneration[i].initGenes();
+                currentGeneration[i].translateGenotype();
                 currentGeneration[i].compile();
             }
 

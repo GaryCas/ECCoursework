@@ -1,7 +1,10 @@
 package entities;
 
-import java.util.Arrays;
-import java.util.Comparator;
+import strategies.BehaviourStrategy;
+import strategies.adjustfirestrategies.AdjustFireStrategy;
+import strategies.firestrategies.FireStrategy;
+import strategies.movementstrategies.MovementStrategy;
+
 import java.util.Random;
 
 /**
@@ -18,103 +21,77 @@ public class BotEntity extends Bot {
 
     int memberGen = 0, memberID = 0;
 
+    Random randy;
+
     String botName = "";
     String sourceCode = "";
 
     BotCompiler botCompiler;
 
+    BotEntity.GeneInitialiser geneInitialiser = new BotEntity.GeneInitialiser();
+    BotEntity.GeneEvaluator geneEvaluator = new BotEntity.GeneEvaluator();
+
     // Phenome phome
+    String phenotype;
 
 
     // Genome geneome
     // the genome will be encoded by values e, a and v.
-    private int[] genome;
+    private int[] genome = new int[6];
     int e = -10000;
-    int a;
-    int v;
+    int geneCounter = 0;
 
     public String fileName;
 
     private double fitness;
+    private int random;
 
     public BotEntity(int memberGen, int memberID) {
         this.memberGen = memberGen;
         this.memberID = memberID;
         this.botName = "botG" + memberGen + "ID"+ memberID;
 
+        BotEntity.GeneInitialiser geneInitialiser = new BotEntity.GeneInitialiser();
+        BotEntity.GeneEvaluator geneEvaluator = new BotEntity.GeneEvaluator();
+
         botCompiler = new BotCompiler(botName, memberGen, memberID, this);
     }
 
-    // copy from the first thing
-    public void init() {
-        initGenoType();
-    }
-
-    private void initGenoType() {
-        genome = new int[6];
-        for (int i : genome) {
-            i = initGene();
+      public int[] initGenes() {
+        for (int i = 0; i < genome.length; i++) {
+            this.genome[i] = initGene();
         }
 
+        return genome;
     }
 
-    private int initGene() {
-        initEventsInt();
-        initActionsGene();
-        return 0;
+    int initGene() {
+        int gene;
+        gene =  geneInitialiser.initEventsInt();
+        gene += geneInitialiser.initActionsInt();
+        gene += geneInitialiser.initValuesInt();
+
+        return gene;
     }
 
-    private void initActionsGene() {
-
-    }
-
-
-    protected int initEventsInt() {
-        e += 10000;
-        return e;
-    }
 
     @Override
-    public void createCode(){
-        botCompiler.createBot();
+    public String translateGenotype(){
+        for (int gene : genome) {
+            geneEvaluator.translateGene(gene);
+        }
+
+        return phenotype;
     }
 
     @Override
     public void compile() {
-        botCompiler.Compile();
+        //botCompiler.Compile();
     }
-
 
     public String getBotName() {
         return botName;
     }
-
-    @Override
-    public String GetRunMethod() {
-        return null;
-    }
-
-    @Override
-    public String GetOnScannedRobot() {
-        return null;
-    }
-
-    @Override
-    public String GetOnHitByBullet() {
-        return null;
-    }
-
-    @Override
-    public String GetOnHitWall() {
-        return null;
-    }
-
-    @Override
-    public String GetOnHitRobot() {
-        return null;
-    }
-
-
 
     public double getFitness() {
         return fitness;
@@ -128,6 +105,101 @@ public class BotEntity extends Bot {
         return memberID;
     }
 
+    public int[] getGenome() {
+        return genome;
+    }
+
+    public void setGeneInitialiser(GeneInitialiser geneInitialiser) {
+        this.geneInitialiser = geneInitialiser;
+    }
+
+    public void setGeneEvaluator(GeneEvaluator geneEvaluator) {
+        this.geneEvaluator = geneEvaluator;
+    }
+
+    class GeneEvaluator{
+        BehaviourStrategy behaviourStrategy;
+
+        String translateGene(int gene){
+            int smallValue = extractSmallValue(gene);
+            int largeValue = extractLargeValue(gene - smallValue);
+
+            return getBehaviourStrategy(gene).translateGenotype(largeValue, smallValue);
+        }
+
+        BehaviourStrategy getBehaviourStrategy(int gene){
+            int eventNBase = extractEventNBase(gene);
+            int actionNBase = extractActionNBase(gene - eventNBase);
+
+            switch (eventNBase){
+                case 0:
+                    behaviourStrategy = MovementStrategy.evaluateAction(actionNBase);
+                    break;
+                case 10000:
+                    behaviourStrategy = MovementStrategy.evaluateAction(actionNBase);
+                    break;
+                case 20000:
+                    behaviourStrategy = MovementStrategy.evaluateAction(actionNBase);
+                    break;
+                case 30000:
+                    behaviourStrategy = FireStrategy.evaluateAction(actionNBase);
+                    break;
+                case 40000:
+                    behaviourStrategy = AdjustFireStrategy.evaluateAction(actionNBase);
+                    break;
+                case 50000:
+                    behaviourStrategy = AdjustFireStrategy.evaluateAction(actionNBase);
+                    break;
+                 default:
+                     System.out.println("That event has not currently been encoded in the gene ");
+            }
+
+            return behaviourStrategy;
+        }
+
+
+        private int extractSmallValue(int gene) {
+            return gene - (gene % 10);
+        }
+
+        private int extractLargeValue(int gene) {
+            return gene - (gene % 100);
+        }
+
+        int extractActionNBase(int gene) {
+            return gene - (gene % 1000);
+        }
+
+        int extractEventNBase(int gene) {
+            return gene - (gene % 10000);
+        }
+
+
+    }
+
+    class GeneInitialiser {
+
+    int initEventsInt () {
+        e += 10000;
+        return e;
+    }
+
+    int initActionsInt() {
+        return getRandom().nextInt(2)*1000;
+    }
+
+    int initValuesInt() {
+        return getRandom().nextInt(1000);
+    }
+
+
+    public Random getRandom() {
+        if (randy == null) {
+            randy = new Random();
+        }
+        return randy;
+    }
+}
 
 }
 

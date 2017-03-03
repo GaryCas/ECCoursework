@@ -72,7 +72,7 @@ public class BotCompiler {
         //WriteCode(botSourceCode);
 
         // compile .java file into .class file
-        Compile();
+       // Compile();
     }
 
     // Returns a name of the bot
@@ -104,7 +104,7 @@ public class BotCompiler {
             {
                 sb.append("public void run() { \n");
                 sb.append("\n");
-                sb.append(_bot.GetRunMethod());
+                //sb.append(_bot.GetRunMethod());
                 sb.append("} \n");
             }
             sb.append("\n");
@@ -115,7 +115,7 @@ public class BotCompiler {
             {
                 sb.append("\n	public void onScannedRobot(ScannedRobotEvent e) { \n ");
                 sb.append("\n");
-                sb.append(_bot.GetOnScannedRobot());
+               // sb.append(_bot.GetOnScannedRobot());
                 sb.append("} \n");
             }
             sb.append("\n");
@@ -124,7 +124,7 @@ public class BotCompiler {
             {
                 sb.append("public void onHitByBullet(HitByBulletEvent e) { \n");
                 sb.append("\n");
-                sb.append(_bot.GetOnHitByBullet());
+               // sb.append(_bot.GetOnHitByBullet());
                 sb.append("} \n");
             }
             sb.append("\n");
@@ -133,7 +133,7 @@ public class BotCompiler {
             {
                 sb.append("public void onHitWall(HitWallEvent e) { \n");
                 sb.append("\n");
-                sb.append(_bot.GetOnHitWall());
+              //  sb.append(_bot.GetOnHitWall());
                 sb.append("} \n");
             }
             sb.append("\n");
@@ -142,7 +142,7 @@ public class BotCompiler {
             {
                 sb.append("public void onHitRobot(HitWallEvent e) { \n");
                 sb.append("\n");
-                sb.append(_bot.GetOnHitRobot());
+               // sb.append(_bot.GetOnHitRobot());
                 sb.append("} \n");
             }
             sb.append("\n");

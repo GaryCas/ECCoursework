@@ -1,6 +1,8 @@
 package runners;
 
+import entities.BotEntity;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -11,11 +13,17 @@ import static org.junit.Assert.*;
  */
 public class ECRunnerTest {
     static int temp;
+    ECRunner ecRunner;
 
     @BeforeClass
     public static void setUpClass(){
         temp = ECRunner.POP_SIZE;
         ECRunner.POP_SIZE = 100;
+    }
+
+    @Before
+    public void setUp(){
+        ecRunner = new ECRunner();
     }
 
     @AfterClass
@@ -24,26 +32,42 @@ public class ECRunnerTest {
     }
 
     @Test
-    public void shouldInitGenerationProperly(){
+    public void shouldInitGenerationProperlyNames(){
         //given
-        long start = System.currentTimeMillis();
-        ECRunner ecRunner = new ECRunner();
-
         assertNull(ecRunner.currentGeneration[0]);
         assertNull(ecRunner.currentGeneration[50]);
 
         //when
         ecRunner.initGeneration();
 
-        long end = System.currentTimeMillis();
+        //then
+        for (int i = 0; i < ecRunner.currentGeneration.length; i++) {
+            assertEquals("botG"+0+"ID"+0,ecRunner.currentGeneration[0].getBotName());
+        }
+    }
+
+    @Test
+    public void shouldInitGenerationProperlyGenome(){
+        //given
+        assertNull(ecRunner.currentGeneration[0]);
+        assertNull(ecRunner.currentGeneration[50]);
+
+        //when
+        ecRunner.initGeneration();
 
         //then
-        assertNotNull(ecRunner.currentGeneration[0]);
-        assertNotNull(ecRunner.currentGeneration[50]);
+        for (BotEntity botEntity : ecRunner.currentGeneration) {
+            assertEquals(6, botEntity.getGenome().length);
 
-        assertEquals("botG0ID:0",ecRunner.currentGeneration[0].getBotName());
+            // test genes
+            for (int i = 0; i < botEntity.getGenome().length ; i++) {
+                int geneMax = (((i+1) * 10000) - 1);
+                int geneMin = geneMax - 10000;
 
-        System.out.println("that took " + (end - start) + " miliseconds ");
+                assertTrue(botEntity.getGenome()[i] < geneMax);
+                assertTrue(botEntity.getGenome()[i] > geneMin);
+            }
+        }
     }
 
     @Test

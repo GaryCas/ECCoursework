@@ -5,19 +5,10 @@ package entities;
  */
 public abstract class Bot {
 
-    abstract public String GetRunMethod();
+    public abstract int[] initGenes();
 
-    abstract public String GetOnScannedRobot();
-
-    abstract public String GetOnHitByBullet();
-
-    abstract public String GetOnHitWall();
-
-    abstract public String GetOnHitRobot();
-
-    public abstract void init();
-
-    public abstract void createCode();
+    public abstract String translateGenotype();
 
     public abstract void compile();
+
 }
