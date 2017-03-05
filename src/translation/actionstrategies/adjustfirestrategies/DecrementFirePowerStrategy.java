@@ -1,11 +1,16 @@
 package translation.actionstrategies.adjustfirestrategies;
 
+import services.GetterService;
+
 /**
  * Created by rd019985 on 03/03/2017.
  */
 public class DecrementFirePowerStrategy extends AdjustFireStrategy {
     @Override
     public String translateAction(int v1, int v2) {
-        return "this.firePower = this.firePower--;";
+
+        GetterService.stringBuilder.append("this.firePower = this.firePower--;");
+
+        return GetterService.stringBuilder.toString();
     }
 }

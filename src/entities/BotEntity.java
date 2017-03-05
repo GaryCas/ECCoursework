@@ -130,10 +130,10 @@ public class BotEntity extends Bot {
             int eventNBase = extractEventNBase(gene);
             int actionNBase = extractActionNBase(gene - eventNBase);
 
-            return getPhenotype(eventNBase, actionNBase, largeValue, smallValue);
+            return getPhenome(eventNBase, actionNBase, largeValue, smallValue);
         }
 
-        private String getPhenotype(int eventNBase, int actionNBase, int largeValue, int smallValue) {
+        private String getPhenome(int eventNBase, int actionNBase, int largeValue, int smallValue) {
             getEventCode(eventNBase);
             getBehaviourStrategy(eventNBase, actionNBase).translateAction(largeValue, smallValue);
             GetterService.stringBuilder.append("}");

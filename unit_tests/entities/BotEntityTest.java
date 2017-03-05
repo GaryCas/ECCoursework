@@ -206,7 +206,7 @@ public class BotEntityTest {
     }
 
     @Test
-    public void shouldtranslateGene111(){
+    public void shouldTranslateGene111(){
         //given
 
         //when
@@ -215,6 +215,133 @@ public class BotEntityTest {
         //then
         assertEquals("public void run() {turnLeft(90);ahead(11);this.pause=false;}", testString);
     }
+
+    @Test
+    public void shouldTranslateGene1111(){
+        //given
+
+        //when
+        String testString = botEntity.geneEvaluator.translateGene(1111);
+
+        //then
+        assertEquals("public void run() {turnLeft(11);ahead(11);this.pause=false;}", testString);
+    }
+
+    @Test
+    public void shouldTranslateGene10111(){
+        //given
+
+        //when
+        String testString = botEntity.geneEvaluator.translateGene(10111);
+
+        //then
+        assertEquals("public void onHitByBullet(HitByBulletEvent e) {turnLeft(90);ahead(11);this.pause=false;}", testString);
+    }
+
+    @Test
+    public void shouldTranslateGene11111(){
+        //given
+
+        //when
+        String testString = botEntity.geneEvaluator.translateGene(11111);
+
+        //then
+        assertEquals("public void onHitByBullet(HitByBulletEvent e) {turnLeft(11);ahead(11);this.pause=false;}", testString);
+    }
+
+
+    @Test
+    public void shouldTranslateGene20111(){
+        //given
+
+        //when
+        String testString = botEntity.geneEvaluator.translateGene(20111);
+
+        //then
+        assertEquals("public void onHitWall(HitWallEvent e) {turnLeft(90);ahead(11);this.pause=false;}", testString);
+    }
+
+    @Test
+    public void shouldTranslateGene21111(){
+        //given
+
+        //when
+        String testString = botEntity.geneEvaluator.translateGene(21111);
+
+        //then
+        assertEquals("public void onHitWall(HitWallEvent e) {turnLeft(11);ahead(11);this.pause=false;}", testString);
+    }
+
+
+    @Test
+    public void shouldTranslateGene30111(){
+        //given
+
+        //when
+        String testString = botEntity.geneEvaluator.translateGene(30111);
+
+        //then
+        assertEquals("public void onScannedRobot(ScannedRobotEvent e) {fire(this.firepower);}", testString);
+    }
+
+    @Test
+    public void shouldTranslateGene31111(){
+        //given
+
+        //when
+        String testString = botEntity.geneEvaluator.translateGene(31121);
+
+        //then
+        assertEquals("public void onScannedRobot(ScannedRobotEvent e) {if(robotDistance >12 || getEnergy() < 15){fire(this.firePower);}else if (robotDistance > 6) {fire(this.firePower+1);}else{fire(this.firePower+2);}}", testString);
+    }
+
+
+    @Test
+    public void shouldTranslateGene40111(){
+        //given
+
+        //when
+        String testString = botEntity.geneEvaluator.translateGene(40111);
+
+        //then
+        assertEquals("public void onBulletHit(BulletHitEvent e) {this.firePower = this.firePower++;}", testString);
+    }
+
+    @Test
+    public void shouldTranslateGene41111(){
+        //given
+
+        //when
+        String testString = botEntity.geneEvaluator.translateGene(41121);
+
+        //then
+        assertEquals("public void onBulletHit(BulletHitEvent e) {this.firePower = this.firePower--;}", testString);
+    }
+
+
+    @Test
+    public void shouldTranslateGene50111(){
+        //given
+
+        //when
+        String testString = botEntity.geneEvaluator.translateGene(50111);
+
+        //then
+        assertEquals("public void onBulletMissed(BulletMissedEvent e) {this.firePower = this.firePower++;}", testString);
+    }
+
+    @Test
+    public void shouldTranslateGene51111(){
+        //given
+
+        //when
+        String testString = botEntity.geneEvaluator.translateGene(51121);
+
+        //then
+        assertEquals("public void onBulletMissed(BulletMissedEvent e) {this.firePower = this.firePower--;}", testString);
+    }
+
+
 
 
 //    @Test
