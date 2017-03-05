@@ -16,7 +16,7 @@ public abstract class MovementStrategy extends BehaviourStrategy {
      * @return code base for a new strategy
      */
     @Override
-    public abstract String translateGenotype(int largeValue, int smallValue);
+    public abstract String translateAction(int largeValue, int smallValue);
 
     @Override
     public MovementStrategy getBehaviourStrategy(int action){

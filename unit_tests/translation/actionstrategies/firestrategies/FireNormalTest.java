@@ -1,6 +1,8 @@
 package translation.actionstrategies.firestrategies;
 
+import org.junit.Before;
 import org.junit.Test;
+import services.GetterService;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,12 +11,18 @@ import static org.junit.Assert.assertEquals;
  */
 public class FireNormalTest {
 
+
+    @Before
+    public void setUp(){
+        GetterService.flushSB();
+    }
+
     @Test
     public void shouldReturnThecorrectString(){
         // given
         FireNormal fireNormal = new FireNormal();
         // when
-        String testString = fireNormal.translateGenotype(100, 9);
+        String testString = fireNormal.translateAction(100, 9);
 
         // then
         assertEquals("fire(this.firepower)", testString);

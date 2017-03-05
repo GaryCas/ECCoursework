@@ -6,7 +6,7 @@ package translation.actionstrategies.adjustfirestrategies;
 public class IncrementFirePowerStrategy extends AdjustFireStrategy {
 
     @Override
-    public String translateGenotype(int v1, int v2) {
+    public String translateAction(int v1, int v2) {
         return "this.firePower = this.firePower++;";
     }
 }

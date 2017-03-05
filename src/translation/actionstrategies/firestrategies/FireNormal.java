@@ -5,7 +5,7 @@ package translation.actionstrategies.firestrategies;
  */
 public class FireNormal extends FireStrategy {
     @Override
-    public String translateGenotype(int distance, int power) {
+    public String translateAction(int distance, int power) {
         return "fire(this.firepower)";
     }
 }

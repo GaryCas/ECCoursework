@@ -33,7 +33,6 @@ public class BotEntity extends Bot {
     BotEntity.GeneInitialiser geneInitialiser = new BotEntity.GeneInitialiser();
     BotEntity.GeneEvaluator geneEvaluator = new BotEntity.GeneEvaluator();
 
-    StringBuilder stringBuilder;
 
     // Phenome phome
     String phenotype;
@@ -58,7 +57,6 @@ public class BotEntity extends Bot {
         BotEntity.GeneInitialiser geneInitialiser = new BotEntity.GeneInitialiser();
         BotEntity.GeneEvaluator geneEvaluator = new BotEntity.GeneEvaluator();
 
-        stringBuilder = GetterService.getStringBuilder();
         botCompiler = new BotCompiler(botName, memberGen, memberID, this);
     }
 
@@ -136,32 +134,40 @@ public class BotEntity extends Bot {
         }
 
         private String getPhenotype(int eventNBase, int actionNBase, int largeValue, int smallValue) {
-            stringBuilder.append(getEventCode(eventNBase));
-            stringBuilder.append(getBehaviourStrategy(eventNBase, actionNBase).translateGenotype(largeValue, smallValue));
-            stringBuilder.append("}");
+            getEventCode(eventNBase);
+            getBehaviourStrategy(eventNBase, actionNBase).translateAction(largeValue, smallValue);
+            GetterService.stringBuilder.append("}");
 
-            return stringBuilder.toString();
+            String phenotype = GetterService.stringBuilder.toString();
+
+            GetterService.flushSB();
+
+            return phenotype;
         }
 
-        String getEventCode(int eventNBase) {
+        void getEventCode(int eventNBase) {
             switch (eventNBase){
                 case 0:
-                    stringBuilder.append(eventCodeTranslator.getRunCode());
+                    GetterService.stringBuilder.append(eventCodeTranslator.getRunCode());
                     break;
                 case 10000:
+                    GetterService.stringBuilder.append(eventCodeTranslator.getOnHitByBulletMethod());
                     break;
                 case 20000:
+                    GetterService.stringBuilder.append(eventCodeTranslator.getOnWallHitMethod());
                     break;
                 case 30000:
+                    GetterService.stringBuilder.append(eventCodeTranslator.getOnScannedRobotMethod());
                     break;
                 case 40000:
+                    GetterService.stringBuilder.append(eventCodeTranslator.getOnBulletHitMethod());
                     break;
                 case 50000:
+                    GetterService.stringBuilder.append(eventCodeTranslator.getOnBulletMissedMethod());
                     break;
                 default:
                     break;
             }
-            return null;
         }
 
         BehaviourStrategy getBehaviourStrategy(int eventNBase, int actionNBase){

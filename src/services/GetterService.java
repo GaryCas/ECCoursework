@@ -5,15 +5,10 @@ package services;
  */
 public class GetterService {
 
-    private static StringBuilder stringBuilder;
+    public final static StringBuilder stringBuilder = new StringBuilder();
 
-    public static StringBuilder getStringBuilder(){
-        if(stringBuilder == null){
-            stringBuilder = new StringBuilder();
-        }
-
+    public static void flushSB(){
         stringBuilder.setLength(0);
-
-        return stringBuilder;
     }
+
 }

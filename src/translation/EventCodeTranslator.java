@@ -7,15 +7,9 @@ import services.GetterService;
  */
 public class EventCodeTranslator {
 
-    StringBuilder stringBuilder;
-
-    public EventCodeTranslator() {
-        this.stringBuilder = GetterService.getStringBuilder();
-    }
 
     public String getRunCode(){
-        stringBuilder.append("public void run() {");
-        return stringBuilder.toString();
+        return "public void run() {";
     }
 
     public String getOnWallHitMethod() {

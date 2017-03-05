@@ -8,7 +8,7 @@ import translation.actionstrategies.BehaviourStrategy;
 public abstract class AdjustFireStrategy extends BehaviourStrategy {
 
     @Override
-    public abstract String translateGenotype(int value1, int value2);
+    public abstract String translateAction(int value1, int value2);
 
     @Override
     public AdjustFireStrategy getBehaviourStrategy(int action){

@@ -206,33 +206,16 @@ public class BotEntityTest {
     }
 
     @Test
-    public void shouldGetEventCodeCorrectly(){
+    public void shouldtranslateGene111(){
         //given
 
         //when
-        String testString = botEntity.geneEvaluator.getEventCode(0);
+        String testString = botEntity.geneEvaluator.translateGene(111);
 
         //then
-        //assertEquals("public");
+        assertEquals("public void run() {turnLeft(90);ahead(11);this.pause=false;}", testString);
     }
 
-    @Test
-    public void shouldGetEventCodeCorrectly2(){
-        //given
-
-        //when
-
-        //then
-    }
-
-    @Test
-    public void shouldGetEventCodeCorrectly3(){
-        //given
-
-        //when
-
-        //then
-    }
 
 //    @Test
 //    public void shouldReturnPathOnCompile() throws IOException {
