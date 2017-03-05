@@ -1,9 +1,11 @@
 package entities;
 
-import strategies.BehaviourStrategy;
-import strategies.adjustfirestrategies.AdjustFireStrategy;
-import strategies.firestrategies.FireStrategy;
-import strategies.movementstrategies.MovementStrategy;
+import services.GetterService;
+import translation.EventCodeTranslator;
+import translation.actionstrategies.BehaviourStrategy;
+import translation.actionstrategies.adjustfirestrategies.AdjustFireStrategy;
+import translation.actionstrategies.firestrategies.FireStrategy;
+import translation.actionstrategies.movementstrategies.MovementStrategy;
 
 import java.util.Random;
 
@@ -31,6 +33,8 @@ public class BotEntity extends Bot {
     BotEntity.GeneInitialiser geneInitialiser = new BotEntity.GeneInitialiser();
     BotEntity.GeneEvaluator geneEvaluator = new BotEntity.GeneEvaluator();
 
+    StringBuilder stringBuilder;
+
     // Phenome phome
     String phenotype;
 
@@ -54,6 +58,7 @@ public class BotEntity extends Bot {
         BotEntity.GeneInitialiser geneInitialiser = new BotEntity.GeneInitialiser();
         BotEntity.GeneEvaluator geneEvaluator = new BotEntity.GeneEvaluator();
 
+        stringBuilder = GetterService.getStringBuilder();
         botCompiler = new BotCompiler(botName, memberGen, memberID, this);
     }
 
@@ -115,17 +120,52 @@ public class BotEntity extends Bot {
     // if I can separate these into their own classes then unit tests and setting might be a bit cleaner
     class GeneEvaluator{
         BehaviourStrategy behaviourStrategy;
+        private EventCodeTranslator eventCodeTranslator;
+
+        public GeneEvaluator() {
+            eventCodeTranslator = new EventCodeTranslator();
+        }
 
         String translateGene(int gene){
             int smallValue = extractSmallValue(gene);
             int largeValue = extractLargeValue(gene - smallValue);
-
-            return getBehaviourStrategy(gene).translateGenotype(largeValue, smallValue);
-        }
-
-        BehaviourStrategy getBehaviourStrategy(int gene){
             int eventNBase = extractEventNBase(gene);
             int actionNBase = extractActionNBase(gene - eventNBase);
+
+            return getPhenotype(eventNBase, actionNBase, largeValue, smallValue);
+        }
+
+        private String getPhenotype(int eventNBase, int actionNBase, int largeValue, int smallValue) {
+            stringBuilder.append(getEventCode(eventNBase));
+            stringBuilder.append(getBehaviourStrategy(eventNBase, actionNBase).translateGenotype(largeValue, smallValue));
+            stringBuilder.append("}");
+
+            return stringBuilder.toString();
+        }
+
+        String getEventCode(int eventNBase) {
+            switch (eventNBase){
+                case 0:
+                    stringBuilder.append(eventCodeTranslator.getRunCode());
+                    break;
+                case 10000:
+                    break;
+                case 20000:
+                    break;
+                case 30000:
+                    break;
+                case 40000:
+                    break;
+                case 50000:
+                    break;
+                default:
+                    break;
+            }
+            return null;
+        }
+
+        BehaviourStrategy getBehaviourStrategy(int eventNBase, int actionNBase){
+            actionNBase = actionNBase - (actionNBase % 1000);
 
             switch (eventNBase){
                 case 0:

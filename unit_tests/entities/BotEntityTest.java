@@ -4,14 +4,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import strategies.adjustfirestrategies.DecrementFirePowerStrategy;
-import strategies.adjustfirestrategies.IncrementFirePowerStrategy;
-import strategies.firestrategies.FireNormal;
-import strategies.firestrategies.SmartFire;
-import strategies.movementstrategies.SquareMovementStrategy;
-import strategies.movementstrategies.TurnAndMoveStrategy;
+import translation.actionstrategies.adjustfirestrategies.DecrementFirePowerStrategy;
+import translation.actionstrategies.adjustfirestrategies.IncrementFirePowerStrategy;
+import translation.actionstrategies.firestrategies.FireNormal;
+import translation.actionstrategies.firestrategies.SmartFire;
+import translation.actionstrategies.movementstrategies.SquareMovementStrategy;
+import translation.actionstrategies.movementstrategies.TurnAndMoveStrategy;
 
-import static entities.BotEntity.*;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.times;
@@ -134,23 +133,23 @@ public class BotEntityTest {
         //when
 
         //then
-        assertEquals(SquareMovementStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(111).getClass());
-        assertEquals(TurnAndMoveStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(1111).getClass());
+        assertEquals(SquareMovementStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(0, 100).getClass());
+        assertEquals(TurnAndMoveStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(0, 1111).getClass());
 
-        assertEquals(SquareMovementStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(10111).getClass());
-        assertEquals(TurnAndMoveStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(11111).getClass());
+        assertEquals(SquareMovementStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(10000, 111).getClass());
+        assertEquals(TurnAndMoveStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(10000, 1111).getClass());
 
-        assertEquals(SquareMovementStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(20111).getClass());
-        assertEquals(TurnAndMoveStrategy.class,botEntity.geneEvaluator.getBehaviourStrategy(21111).getClass());
+        assertEquals(SquareMovementStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(20000, 111).getClass());
+        assertEquals(TurnAndMoveStrategy.class,botEntity.geneEvaluator.getBehaviourStrategy(20000, 1111).getClass());
 
-        assertEquals(FireNormal.class ,botEntity.geneEvaluator.getBehaviourStrategy(30111).getClass());
-        assertEquals(SmartFire.class ,botEntity.geneEvaluator.getBehaviourStrategy(31111).getClass());
+        assertEquals(FireNormal.class ,botEntity.geneEvaluator.getBehaviourStrategy(30000, 111).getClass());
+        assertEquals(SmartFire.class ,botEntity.geneEvaluator.getBehaviourStrategy(30000, 1111).getClass());
 
-        assertEquals(IncrementFirePowerStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(40111).getClass());
-        assertEquals(DecrementFirePowerStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(41111).getClass());
+        assertEquals(IncrementFirePowerStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(40000, 111).getClass());
+        assertEquals(DecrementFirePowerStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(40000, 1111).getClass());
 
-        assertEquals(IncrementFirePowerStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(50111).getClass());
-        assertEquals(DecrementFirePowerStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(51111).getClass());
+        assertEquals(IncrementFirePowerStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(50000, 111).getClass());
+        assertEquals(DecrementFirePowerStrategy.class ,botEntity.geneEvaluator.getBehaviourStrategy(50000, 1111).getClass());
     }
 
     @Test
@@ -207,8 +206,32 @@ public class BotEntityTest {
     }
 
     @Test
-    public void shouldInitGeneCorrectly() {
+    public void shouldGetEventCodeCorrectly(){
+        //given
 
+        //when
+        String testString = botEntity.geneEvaluator.getEventCode(0);
+
+        //then
+        //assertEquals("public");
+    }
+
+    @Test
+    public void shouldGetEventCodeCorrectly2(){
+        //given
+
+        //when
+
+        //then
+    }
+
+    @Test
+    public void shouldGetEventCodeCorrectly3(){
+        //given
+
+        //when
+
+        //then
     }
 
 //    @Test
