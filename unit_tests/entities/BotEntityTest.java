@@ -341,7 +341,18 @@ public class BotEntityTest {
         assertEquals("public void onBulletMissed(BulletMissedEvent e) {this.firePower = this.firePower--;}", testString);
     }
 
+    /**
+     * Need to bad event and action alleles
+     *
+     * event 6-9
+     * action 2-9
+     *
+     */
 
+    @Test
+    public void shouldTranslateGenoType(){
+
+    }
 
 
 //    @Test

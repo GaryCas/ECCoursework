@@ -57,7 +57,7 @@ public class BreedingServiceTest {
     }
 
     @Test
-    public void shouldreturnStrongest(){
+    public void shouldReturnStrongest(){
         //given
         BotEntity[] botEntities = {b4, b3, b2, b1};
 
@@ -75,5 +75,10 @@ public class BreedingServiceTest {
         assertEquals(3, testBotEntities[0].getMemberID());
         assertEquals(2, testBotEntities[1].getMemberID());
     }
+
+    /**
+     * Rememeber that the breeding service needs to select which individuals should make it to the next generation
+     * AND which individuals will become parents
+     */
 
 }

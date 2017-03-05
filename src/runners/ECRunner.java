@@ -126,10 +126,9 @@ public class ECRunner {
             for (int i = 0; i < POP_SIZE; i++) {
                 currentGeneration[i] = new BotEntity(0, i);
                 currentGeneration[i].initGenes();
-                currentGeneration[i].translateGenotype();
+                currentGeneration[i].setCode();
                 currentGeneration[i].compile();
             }
-
     }
 
     private void scoreFitnessOnSet(String[] sampleSet){

@@ -36,6 +36,7 @@ public class BotEntity extends Bot {
 
     // Phenome phome
     String phenotype;
+    String code;
 
 
     // Genome geneome
@@ -48,6 +49,7 @@ public class BotEntity extends Bot {
 
     private double fitness;
     private int random;
+    private String classCode;
 
     public BotEntity(int memberGen, int memberID) {
         this.memberGen = memberGen;
@@ -78,15 +80,6 @@ public class BotEntity extends Bot {
     }
 
     @Override
-    public String translateGenotype(){
-        for (int gene : genome) {
-            phenotype.concat(geneEvaluator.translateGene(gene));
-        }
-
-        return phenotype;
-    }
-
-    @Override
     public void compile() {
         //botCompiler.Compile();
     }
@@ -113,6 +106,32 @@ public class BotEntity extends Bot {
 
     void setGeneInitialiser(GeneInitialiser geneInitialiser) {
         this.geneInitialiser = geneInitialiser;
+    }
+
+    public void setCode() {
+        code.concat(getClassCode());
+        code.concat(translateGenotype());
+        code.concat("}");
+    }
+
+    @Override
+    public String translateGenotype(){
+        for (int gene : genome) {
+            phenotype.concat(geneEvaluator.translateGene(gene));
+        }
+
+        return phenotype;
+    }
+
+    public String getClassCode() {
+        GetterService.stringBuilder.append("public class Fire extends Robot {");
+        GetterService.stringBuilder.append("int firePower = 1");
+        GetterService.stringBuilder.append("boolean pause");
+
+        String classCode = GetterService.stringBuilder.toString();
+        GetterService.flushSB();
+
+        return classCode;
     }
 
     // if I can separate these into their own classes then unit tests and setting might be a bit cleaner
