@@ -21,11 +21,8 @@ public class BotEntity extends Bot {
     String botName = "";
     String sourceCode = "";
 
-    BotCompiler botCompiler;
-
     BotEntity.GeneInitialiser geneInitialiser = new BotEntity.GeneInitialiser();
     BotEntity.GeneEvaluator geneEvaluator = new BotEntity.GeneEvaluator();
-
 
     // Phenome phome
     String phenotype = "";
@@ -41,8 +38,6 @@ public class BotEntity extends Bot {
     public String fileName;
 
     private double fitness;
-    private int random;
-    private String classCode;
 
     public BotEntity(int memberGen, int memberID) {
         this.memberGen = memberGen;

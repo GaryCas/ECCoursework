@@ -4,11 +4,13 @@ import entities.ApplicationVariables;
 import entities.BotEntity;
 import services.FileWritingService;
 
+import java.util.ArrayList;
+
 /**
  * Created by rd019985 on 01/03/2017.
  */
 public class ECRunner {
-    static int genCount = 0, best;
+    static int genCount = 0;
     public static BotEntity bestSoFar;
 
     final static String[] rivalsBatch1 = {
@@ -35,100 +37,47 @@ public class ECRunner {
 
     String botNames[] = new String[POP_SIZE];
 
-    BotEntity[] currentGeneration = new BotEntity[POP_SIZE];
-    BotEntity[] newGeneration = new BotEntity[POP_SIZE];
-    BotEntity[] winners = new BotEntity[POP_SIZE];
-
-    static double
-            PROB_CROSSOVER = 0.85,
-            PROB_REPLICATION = 0.05,
-            PROB_MUTATION = 0.1,
-            PROB_ARCHITECTURE = 0.0,
-
-    PROB_INTERNAL_NODE = 0.9,
-            PROB_ANY_NODE = 0.1,
-
-    fitnesses[] = new double[POP_SIZE],
-            slice[] = new double[POP_SIZE],
-            totalFitness,
-            avgFitness,
-            allAvgFitnesses[] = new double[MAX_GENS],
-            avgNumNodes[] = new double[MAX_GENS],
-            avgNodeCount;
+    ArrayList<BotEntity> currentGeneration = new ArrayList<>();
+    ArrayList<BotEntity> newGeneration = new ArrayList<>();
+    ArrayList<BotEntity> survivors = new ArrayList<>();
+    ArrayList<BotEntity> parents = new ArrayList<>();
 
     public void ECLoop() {
         // -- EC loop
         while(genCount < MAX_GENS){
 
+            // creating generation will be done by the breeding service.
 
-            for(int i = 0; i < POP_SIZE; i++)
-                botNames[i] = ApplicationVariables.PACKAGE + "."+currentGeneration[i].getBotName();
+            // run battle between the rivals batch and current generation
+            //scoreFitnessOnSet(rivalsBatch1);
 
-            scoreFitnessOnSet(rivalsBatch1);
+            // calculate fitness of each bot
 
-            totalFitness = 0;
-            avgFitness = 0;
-            best = 0;
-            avgNodeCount = 0;
+            // select survivors, probably rank and throwaway
 
-            // get total fitness
-            for(int i=0; i<POP_SIZE; i++){
+            // select parents,
 
-            }
+            // record results using file writer
 
-            //
-            avgNumNodes[genCount] = (avgNodeCount /= POP_SIZE);
-
-            avgFitness = totalFitness/POP_SIZE;
-            allAvgFitnesses[genCount] = avgFitness;
-
-            // store the best-in-generation
-            winners[genCount] = currentGeneration[best];
-            if(currentGeneration[best].getFitness() > bestSoFar.getFitness()) bestSoFar = currentGeneration[best];
-
-            System.out.println("\nROUND " + genCount
-                    + "\nAvg. Fitness:\t" + avgFitness + "\t Avg # of nodes: "+avgNumNodes[genCount]
-                    + "\nBest In Round:\t" + winners[genCount].getBotName() +" - "+ winners[genCount].getFitness()
-                  //  + "\t# nodes " + candidates[genCount].nodeCount
-                    + "\nBest So Far:\t" + bestSoFar.getBotName() +" - "+ bestSoFar.getFitness() +"\n");
-
-            //FileWritingService.outputRunData(genCount, avgFitness, currentGeneration[best].getFitness(), avgNodeCount, currentGeneration[best].fileName);
-
-            //if(++genCount == MAX_GENS) break;
-            genCount++;
+            // breed and set current generation
 
 
-            // breed next generation
-            System.out.println("In breeding stage");
-            breedPool();
+//            System.out.println("\nROUND " + genCount
+//                    + "\nAvg. Fitness:\t" + avgFitness + "\t Avg # of nodes: "+avgNumNodes[genCount]
+//                    + "\nBest In Round:\t" + survivors[genCount].getBotName() +" - "+ survivors[genCount].getFitness()
+//                  //  + "\t# nodes " + candidates[genCount].nodeCount
+//                    + "\nBest So Far:\t" + bestSoFar.getBotName() +" - "+ bestSoFar.getFitness() +"\n");
 
-            // set newPool as pool, clear newPool
-            currentGeneration = newGeneration;
-            newGeneration = new BotEntity[POP_SIZE];
-
-            compilePool();
-
-            // delete all old files?
-
+        genCount++;
         }
-    }
-
-
-
-    private static void compilePool() {
-
-    }
-
-    private static void breedPool() {
-
     }
 
     public void initGeneration() {
             for (int i = 0; i < POP_SIZE; i++) {
-                currentGeneration[i] = new BotEntity(0, i);
-                currentGeneration[i].initGenes();
-                currentGeneration[i].setCode();
-                currentGeneration[i].compile();
+                currentGeneration.add(new BotEntity(0, i));
+                currentGeneration.get(i).initGenes();
+                currentGeneration.get(i).setCode();
+                currentGeneration.get(i).compile();
             }
     }
 
@@ -138,4 +87,19 @@ public class ECRunner {
         arena.runBatchWithSamples(botNames, sampleSet, ROUNDS);
     }
 
+    public void setCurrentGeneration(ArrayList<BotEntity> currentGeneration) {
+        this.currentGeneration = currentGeneration;
+    }
+
+    public void setNewGeneration(ArrayList<BotEntity> newGeneration) {
+        this.newGeneration = newGeneration;
+    }
+
+    public ArrayList<BotEntity> getCurrentGeneration() {
+        return currentGeneration;
+    }
+
+    public ArrayList<BotEntity> getNewGeneration() {
+        return newGeneration;
+    }
 }
