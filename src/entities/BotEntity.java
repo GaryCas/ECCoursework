@@ -14,14 +14,7 @@ import java.util.Random;
  */
 public class BotEntity extends Bot {
 
-    public final static
-    String PATH = new String("C:\\robocode\\robots\\testingEC");
-
-    private static Process process;
-    public static String PACKAGE = new String("testingEC");
-    String JARS = new String("C:\\robocode\\libs\\robocode.jar;");
-
-    int memberGen = 0, memberID = 0;
+   int memberGen = 0, memberID = 0;
 
     Random randy;
 
@@ -35,8 +28,8 @@ public class BotEntity extends Bot {
 
 
     // Phenome phome
-    String phenotype;
-    String code;
+    String phenotype = "";
+    String code = "";
 
 
     // Genome geneome
@@ -59,7 +52,7 @@ public class BotEntity extends Bot {
         BotEntity.GeneInitialiser geneInitialiser = new BotEntity.GeneInitialiser();
         BotEntity.GeneEvaluator geneEvaluator = new BotEntity.GeneEvaluator();
 
-        botCompiler = new BotCompiler(botName, memberGen, memberID, this);
+       // botCompiler = new BotCompiler(botName, memberGen, memberID, this);
     }
 
     public int[] initGenes() {
@@ -108,22 +101,32 @@ public class BotEntity extends Bot {
         this.geneInitialiser = geneInitialiser;
     }
 
-    public void setCode() {
-        code.concat(getClassCode());
-        code.concat(translateGenotype());
-        code.concat("}");
+    public String setCode() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(getClassCode());
+        sb.append(translateGenotype());
+        sb.append("}");
+
+        code = sb.toString();
+
+        return code;
     }
 
     @Override
     public String translateGenotype(){
+        StringBuilder sb = new StringBuilder();
+
         for (int gene : genome) {
-            phenotype.concat(geneEvaluator.translateGene(gene));
+            sb.append(geneEvaluator.translateGene(gene));
         }
+
+        phenotype = sb.toString();
 
         return phenotype;
     }
 
-    public String getClassCode() {
+    String getClassCode() {
         GetterService.stringBuilder.append("public class Fire extends Robot {");
         GetterService.stringBuilder.append("int firePower = 1");
         GetterService.stringBuilder.append("boolean pause");
@@ -132,6 +135,10 @@ public class BotEntity extends Bot {
         GetterService.flushSB();
 
         return classCode;
+    }
+
+    void setGenome(int[] genome) {
+        this.genome = genome;
     }
 
     // if I can separate these into their own classes then unit tests and setting might be a bit cleaner
@@ -191,6 +198,7 @@ public class BotEntity extends Bot {
 
         BehaviourStrategy getBehaviourStrategy(int eventNBase, int actionNBase){
             actionNBase = actionNBase - (actionNBase % 1000);
+            actionNBase = actionNBase%2000;
 
             switch (eventNBase){
                 case 0:

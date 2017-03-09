@@ -249,7 +249,6 @@ public class BotEntityTest {
         assertEquals("public void onHitByBullet(HitByBulletEvent e) {turnLeft(11);ahead(11);this.pause=false;}", testString);
     }
 
-
     @Test
     public void shouldTranslateGene20111(){
         //given
@@ -271,7 +270,6 @@ public class BotEntityTest {
         //then
         assertEquals("public void onHitWall(HitWallEvent e) {turnLeft(11);ahead(11);this.pause=false;}", testString);
     }
-
 
     @Test
     public void shouldTranslateGene30111(){
@@ -295,7 +293,6 @@ public class BotEntityTest {
         assertEquals("public void onScannedRobot(ScannedRobotEvent e) {if(robotDistance >12 || getEnergy() < 15){fire(this.firePower);}else if (robotDistance > 6) {fire(this.firePower+1);}else{fire(this.firePower+2);}}", testString);
     }
 
-
     @Test
     public void shouldTranslateGene40111(){
         //given
@@ -317,7 +314,6 @@ public class BotEntityTest {
         //then
         assertEquals("public void onBulletHit(BulletHitEvent e) {this.firePower = this.firePower--;}", testString);
     }
-
 
     @Test
     public void shouldTranslateGene50111(){
@@ -349,8 +345,61 @@ public class BotEntityTest {
      *
      */
 
+    // SQMovement turnLeft(90);ahead(11);this.pause=false;}
+    // FireNormal {fire(this.firepower);}
+    // IncrementP this.firePower = this.firePower++;
+    // decrementP this.firePower = this.firePower--;
+
     @Test
-    public void shouldTranslateGenoType(){
+    public void shouldTranslateGenoTypeWith0Actions(){
+        // given
+        int[] genome = {111, 10111, 20111, 30111, 40111, 50111};
+
+        BotEntity botEntity = new BotEntity(0,0);
+        botEntity.setGenome(genome);
+
+        // when
+        String phenotype = botEntity.translateGenotype();
+        String expectedPhenotype = "public void run() {turnLeft(90);ahead(11);this.pause=false;}"
+                +"public void onHitByBullet(HitByBulletEvent e) {turnLeft(90);ahead(11);this.pause=false;}"
+                +"public void onHitWall(HitWallEvent e) {turnLeft(90);ahead(11);this.pause=false;}"
+                +"public void onScannedRobot(ScannedRobotEvent e) {fire(this.firepower);}"
+                +"public void onBulletHit(BulletHitEvent e) {this.firePower = this.firePower++;}"
+                +"public void onBulletMissed(BulletMissedEvent e) {this.firePower = this.firePower++;}";
+
+        // then
+        assertEquals("Phenotype did not translate properly",
+                expectedPhenotype,
+                phenotype);
+
+    }
+
+    // TMStrategy turnLeft(11);ahead(11);this.pause=false;}
+    // SmartNormal if(robotDistance >11 || getEnergy() < 15){fire(this.firePower);}else if (robotDistance > 5) {fire(this.firePower+1);}else{fire(this.firePower+2);}
+    // IncrementP this.firePower = this.firePower++;
+    // decrementP this.firePower = this.firePower--;
+
+    @Test
+    public void shouldTranslateGenoTypeWith1Actions(){
+        // given
+        int[] genome = {1111, 11111, 21111, 31111, 41111, 51111};
+
+        BotEntity botEntity = new BotEntity(0,0);
+        botEntity.setGenome(genome);
+
+        // when
+        String phenotype = botEntity.translateGenotype();
+        String expectedPhenotype = "public void run() {turnLeft(11);ahead(11);this.pause=false;}"
+                +"public void onHitByBullet(HitByBulletEvent e) {turnLeft(11);ahead(11);this.pause=false;}"
+                +"public void onHitWall(HitWallEvent e) {turnLeft(11);ahead(11);this.pause=false;}"
+                +"public void onScannedRobot(ScannedRobotEvent e) {if(robotDistance >11 || getEnergy() < 15){fire(this.firePower);}else if (robotDistance > 5) {fire(this.firePower+1);}else{fire(this.firePower+2);}}"
+                +"public void onBulletHit(BulletHitEvent e) {this.firePower = this.firePower--;}"
+                +"public void onBulletMissed(BulletMissedEvent e) {this.firePower = this.firePower--;}";
+
+        // then
+        assertEquals("Phenotype did not translate properly",
+                expectedPhenotype,
+                phenotype);
 
     }
 

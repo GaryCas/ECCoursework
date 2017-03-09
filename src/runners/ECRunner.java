@@ -1,5 +1,6 @@
 package runners;
 
+import entities.ApplicationVariables;
 import entities.BotEntity;
 import services.FileWritingService;
 
@@ -61,7 +62,7 @@ public class ECRunner {
 
 
             for(int i = 0; i < POP_SIZE; i++)
-                botNames[i] = currentGeneration[i].PACKAGE + "."+currentGeneration[i].getBotName();
+                botNames[i] = ApplicationVariables.PACKAGE + "."+currentGeneration[i].getBotName();
 
             scoreFitnessOnSet(rivalsBatch1);
 
@@ -91,7 +92,7 @@ public class ECRunner {
                   //  + "\t# nodes " + candidates[genCount].nodeCount
                     + "\nBest So Far:\t" + bestSoFar.getBotName() +" - "+ bestSoFar.getFitness() +"\n");
 
-            FileWritingService.outputRunData(genCount, avgFitness, currentGeneration[best].getFitness(), avgNodeCount, currentGeneration[best].fileName);
+            //FileWritingService.outputRunData(genCount, avgFitness, currentGeneration[best].getFitness(), avgNodeCount, currentGeneration[best].fileName);
 
             //if(++genCount == MAX_GENS) break;
             genCount++;

@@ -25,6 +25,6 @@ public class FireNormalTest {
         String testString = fireNormal.translateAction(100, 9);
 
         // then
-        assertEquals("fire(this.firepower)", testString);
+        assertEquals("fire(this.firepower);", testString);
     }
 }

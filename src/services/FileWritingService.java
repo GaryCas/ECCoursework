@@ -1,7 +1,9 @@
 package services;
 
+import entities.ApplicationVariables;
 import entities.BotEntity;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -10,38 +12,42 @@ import java.io.IOException;
  */
 public class FileWritingService {
 
-
-    public static void outputRunData(int round, double avgFit, double bestFit, double avgNode, String bestBotName){
-        FileWriter dataStream;
-        try {
-            // store all info in single file
-//            dataStream = new FileWriter(BotEntity.PATH+"\\run_data.txt", true);
-//            dataStream.write(round+"\t"+avgFit+"\t"+bestFit+"\t"+avgNode+"\t"+bestNode+"\n");
-//            dataStream.close();
-
+    /**
+     * The method that publishes the result of a round, called at the end of each round.
+     *
+     * @param round
+     * @param avgFit
+     * @param bestFit
+     * @param avgNode
+     * @param bestBotName
+     */
+    public static void outputRunData(int round, double[] info, String[] filenames, String path){
             // store each variable in its own file (for graphs)
-            dataStream = new FileWriter(BotEntity.PATH+"\\run_data_avgFitness.txt", true);
-            dataStream.write(avgFit+"\n");
-            dataStream.close();
+            for (int i = 0; i < info.length; i++) {
+                writeToFile(round, info[i], filenames[i], path);
+            }
+    }
 
-            dataStream = new FileWriter(BotEntity.PATH+"\\run_data_bestFitness.txt", true);
-            dataStream.write(bestFit+"\n");
-            dataStream.close();
+    private static void writeToFile(int round, double value, String filename, String path) {
+        try {
+            validateFile(filename, path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-            dataStream = new FileWriter(BotEntity.PATH+"\\run_data_avgNodes.txt", true);
-            dataStream.write(avgNode+"\n");
-            dataStream.close();
-
-//            dataStream = new FileWriter(BotEntity.PATH+"\\run_data_bestNodes.txt", true);
-//            dataStream.write(bestNode+"\n");
-//            dataStream.close();
-
-            dataStream = new FileWriter(BotEntity.PATH+"\\run_data_candidates.txt", true);
-            dataStream.write(bestBotName+"\n");
-            dataStream.close();
+        try(FileWriter dataStream = new FileWriter(path+filename, true)) {
+            dataStream.write("round " + round + " " +value+"\n");
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private static void validateFile(String filename, String path) throws IOException {
+        File file ;
+        if(!new File(path+"\\"+filename).exists()){
+           file = new File(path+"\\"+filename);
+           file.createNewFile();
         }
 
     }
