@@ -3,13 +3,22 @@ package services;
 import entities.BotEntity;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Mockito.verify;
 
 /**
  * Created by rd019985 on 02/03/2017.
  */
 public class BreedingServiceTest {
+    @Mock
+    MeosisService mockMeosisService;
+
     BotEntity b1;
     BotEntity b2;
     BotEntity b3;
@@ -26,6 +35,8 @@ public class BreedingServiceTest {
         b2.setFitness(21.0);
         b3.setFitness(22.0);
         b4.setFitness(23.0);
+
+        MockitoAnnotations.initMocks(this);
     }
 
     @Test
@@ -67,7 +78,7 @@ public class BreedingServiceTest {
         assertEquals(0, botEntities[3].getMemberID());
 
         //when
-        BotEntity[] testBotEntities = BreedingService.returnStrongest(botEntities);
+        BotEntity[] testBotEntities = BreedingService.returnParents(botEntities);
 
         //then
         assertEquals(2, testBotEntities.length);
@@ -75,6 +86,26 @@ public class BreedingServiceTest {
         assertEquals(3, testBotEntities[0].getMemberID());
         assertEquals(2, testBotEntities[1].getMemberID());
     }
+
+
+    @Test
+    public void shouldImplementMeosis(){
+        //given
+        BreedingService breedingService = new BreedingService();
+        breedingService.setMeosisService(mockMeosisService);
+        breedingService.setCrossoverFreq(1);
+        b1 = new BotEntity(0,0);
+        b2 = new BotEntity(0,1);
+
+        //when
+        BreedingService.doMeosis(b1,b2);
+
+        //then
+        verify(mockMeosisService).positionBasedCrossover((BotEntity) any(), (BotEntity) any(),anyInt());
+        verify(mockMeosisService).mutate((int[]) any(), anyInt(), anyInt());
+    }
+
+
 
     /**
      * Rememeber that the breeding service needs to select which individuals should make it to the next generation

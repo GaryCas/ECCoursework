@@ -72,30 +72,6 @@ public class BotEntity extends Bot {
         //botCompiler.Compile();
     }
 
-    public String getBotName() {
-        return botName;
-    }
-
-    public double getFitness() {
-        return fitness;
-    }
-
-    public void setFitness(double fitness) {
-        this.fitness = fitness;
-    }
-
-    public int getMemberID() {
-        return memberID;
-    }
-
-    public int[] getGenome() {
-        return genome;
-    }
-
-    void setGeneInitialiser(GeneInitialiser geneInitialiser) {
-        this.geneInitialiser = geneInitialiser;
-    }
-
     public String setCode() {
         StringBuilder sb = new StringBuilder();
 
@@ -132,7 +108,35 @@ public class BotEntity extends Bot {
         return classCode;
     }
 
-    void setGenome(int[] genome) {
+
+    public String getBotName() {
+        return botName;
+    }
+
+    public double getFitness() {
+        return fitness;
+    }
+
+    public void setFitness(double fitness) {
+        this.fitness = fitness;
+    }
+
+    public int getMemberID() {
+        return memberID;
+    }
+
+    public int[] getGenome() {
+        return genome;
+    }
+
+
+
+    void setGeneInitialiser(GeneInitialiser geneInitialiser) {
+        this.geneInitialiser = geneInitialiser;
+    }
+
+
+    public void setGenome(int[] genome) {
         this.genome = genome;
     }
 

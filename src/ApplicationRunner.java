@@ -5,11 +5,13 @@ import runners.ECRunner;
  * Created by rd019985 on 01/03/2017.
  */
 public class ApplicationRunner {
+    static ECRunner ecRunner = new ECRunner();
+
 
 
     public static void main(String args[]){
 
-        ECRunner ecRunner = new ECRunner();
+
 
         // initial values
         ECRunner.bestSoFar = new BotEntity(-1 , 0);

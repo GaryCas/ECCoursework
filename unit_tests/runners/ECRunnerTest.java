@@ -34,29 +34,27 @@ public class ECRunnerTest {
     @Test
     public void shouldInitGenerationProperlyNames(){
         //given
-        assertNull(ecRunner.currentGeneration[0]);
-        assertNull(ecRunner.currentGeneration[50]);
+        assertEquals(0,ecRunner.newGeneration.size());
 
         //when
         ecRunner.initGeneration();
 
         //then
-        for (int i = 0; i < ecRunner.currentGeneration.length; i++) {
-            assertEquals("botG"+0+"ID"+0,ecRunner.currentGeneration[0].getBotName());
+        for (int i = 0; i < ecRunner.newGeneration.size(); i++) {
+            assertEquals("botG"+i+"ID"+i,ecRunner.newGeneration.get(i).getBotName());
         }
     }
 
     @Test
     public void shouldInitGenerationProperlyGenome(){
         //given
-        assertNull(ecRunner.currentGeneration[0]);
-        assertNull(ecRunner.currentGeneration[50]);
+        assertEquals(0,ecRunner.newGeneration.size());
 
         //when
         ecRunner.initGeneration();
 
         //then
-        for (BotEntity botEntity : ecRunner.currentGeneration) {
+        for (BotEntity botEntity : ecRunner.newGeneration) {
             assertEquals(6, botEntity.getGenome().length);
 
             // test genes
@@ -69,6 +67,7 @@ public class ECRunnerTest {
             }
         }
     }
+
 
     @Test
     public void shouldTemplate(){

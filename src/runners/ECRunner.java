@@ -2,9 +2,12 @@ package runners;
 
 import entities.ApplicationVariables;
 import entities.BotEntity;
+import services.BreedingService;
 import services.FileWritingService;
 
 import java.util.ArrayList;
+
+import static javafx.scene.input.KeyCode.T;
 
 /**
  * Created by rd019985 on 01/03/2017.
@@ -12,6 +15,7 @@ import java.util.ArrayList;
 public class ECRunner {
     static int genCount = 0;
     public static BotEntity bestSoFar;
+    ECRunner.ECExecutor ecExecutor = new ECRunner.ECExecutor();
 
     final static String[] rivalsBatch1 = {
             "sample.SittingDuck"
@@ -31,35 +35,29 @@ public class ECRunner {
     };
 
     public static int
-            POP_SIZE = 10,
-            MAX_GENS = 4,
+            POP_SIZE = 20,
+            MAX_GENS = 10,
             ROUNDS = 5;
 
     String botNames[] = new String[POP_SIZE];
 
     ArrayList<BotEntity> currentGeneration = new ArrayList<>();
     ArrayList<BotEntity> newGeneration = new ArrayList<>();
-    ArrayList<BotEntity> survivors = new ArrayList<>();
-    ArrayList<BotEntity> parents = new ArrayList<>();
 
     public void ECLoop() {
         // -- EC loop
         while(genCount < MAX_GENS){
 
-            // creating generation will be done by the breeding service.
+            currentGeneration = newGeneration;
 
-            // run battle between the rivals batch and current generation
-            //scoreFitnessOnSet(rivalsBatch1);
+            BotEntity[] currentGenerationArray = currentGeneration.toArray(new BotEntity[currentGeneration.size()]);
+            newGeneration = BreedingService.createNewGeneration(currentGenerationArray);
+
+            // run battle between the rivals batch and new generation
+                // scoreFitnessOnSet(rivalsBatch1);
 
             // calculate fitness of each bot
-
-            // select survivors, probably rank and throwaway
-
-            // select parents,
-
-            // record results using file writer
-
-            // breed and set current generation
+                // calclateFitness(newGeneration)
 
 
 //            System.out.println("\nROUND " + genCount
@@ -74,10 +72,10 @@ public class ECRunner {
 
     public void initGeneration() {
             for (int i = 0; i < POP_SIZE; i++) {
-                currentGeneration.add(new BotEntity(0, i));
-                currentGeneration.get(i).initGenes();
-                currentGeneration.get(i).setCode();
-                currentGeneration.get(i).compile();
+                newGeneration.add(new BotEntity(i, i));
+                newGeneration.get(i).initGenes();
+                newGeneration.get(i).setCode();
+                newGeneration.get(i).compile();
             }
     }
 
@@ -101,5 +99,10 @@ public class ECRunner {
 
     public ArrayList<BotEntity> getNewGeneration() {
         return newGeneration;
+    }
+
+    public class ECExecutor{
+
+
     }
 }
