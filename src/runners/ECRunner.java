@@ -3,6 +3,7 @@ package runners;
 import entities.ApplicationVariables;
 import entities.BotEntity;
 import services.BreedingService;
+import services.CompilationService;
 import services.FileWritingService;
 
 import java.util.ArrayList;
@@ -41,8 +42,8 @@ public class ECRunner {
 
     String botNames[] = new String[POP_SIZE];
 
-    ArrayList<BotEntity> currentGeneration = new ArrayList<>();
-    ArrayList<BotEntity> newGeneration = new ArrayList<>();
+    BotEntity[] currentGeneration = new BotEntity[POP_SIZE];
+    BotEntity[] newGeneration = new BotEntity[POP_SIZE];
 
     public void ECLoop() {
         // -- EC loop
@@ -50,8 +51,10 @@ public class ECRunner {
 
             currentGeneration = newGeneration;
 
-            BotEntity[] currentGenerationArray = currentGeneration.toArray(new BotEntity[currentGeneration.size()]);
-            newGeneration = BreedingService.createNewGeneration(currentGenerationArray);
+            newGeneration = BreedingService.createNewGeneration(currentGeneration);
+
+
+            CompilationService.compile(newGeneration, ApplicationVariables.PATH);
 
             // run battle between the rivals batch and new generation
                 // scoreFitnessOnSet(rivalsBatch1);
@@ -72,10 +75,10 @@ public class ECRunner {
 
     public void initGeneration() {
             for (int i = 0; i < POP_SIZE; i++) {
-                newGeneration.add(new BotEntity(i, i));
-                newGeneration.get(i).initGenes();
-                newGeneration.get(i).setCode();
-                newGeneration.get(i).compile();
+                newGeneration[i] = new BotEntity(i, i);
+                newGeneration[i].initGenes();
+                newGeneration[i].setCode();
+                newGeneration[i].compile();
             }
     }
 
@@ -85,20 +88,20 @@ public class ECRunner {
         arena.runBatchWithSamples(botNames, sampleSet, ROUNDS);
     }
 
-    public void setCurrentGeneration(ArrayList<BotEntity> currentGeneration) {
-        this.currentGeneration = currentGeneration;
-    }
-
-    public void setNewGeneration(ArrayList<BotEntity> newGeneration) {
-        this.newGeneration = newGeneration;
-    }
-
-    public ArrayList<BotEntity> getCurrentGeneration() {
+    public BotEntity[] getCurrentGeneration() {
         return currentGeneration;
     }
 
-    public ArrayList<BotEntity> getNewGeneration() {
+    public void setCurrentGeneration(BotEntity[] currentGeneration) {
+        this.currentGeneration = currentGeneration;
+    }
+
+    public BotEntity[] getNewGeneration() {
         return newGeneration;
+    }
+
+    public void setNewGeneration(BotEntity[] newGeneration) {
+        this.newGeneration = newGeneration;
     }
 
     public class ECExecutor{

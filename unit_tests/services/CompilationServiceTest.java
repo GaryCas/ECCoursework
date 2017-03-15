@@ -1,9 +1,11 @@
 package services;
 
 import entities.ApplicationVariables;
+import entities.BotEntity;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import utils.BotProvider;
 import utils.Utils;
 
 import java.io.*;
@@ -65,10 +67,30 @@ public class CompilationServiceTest {
         }
 
         //when
-        CompilationService.Compile(ApplicationVariables.UTPATH, "test.java");
-
+        CompilationService.compile(ApplicationVariables.UTPATH, "test.java");
 
         //then
         assertTrue( new File(ApplicationVariables.UTPATH +"\\"+"test.class").exists());
+    }
+
+    @Test
+    public void shouldCompileBots() throws IOException {
+        // given
+        assertFalse( new File(ApplicationVariables.UTPATH +"\\"+"test.class").exists());
+        BotProvider botProvider = new BotProvider();
+        BotEntity[] botEntities = botProvider.setUpBots();
+
+        for (BotEntity botEntity : botEntities) {
+            assertFalse( new File(ApplicationVariables.UTPATH +"\\"+ botEntity.getClassName()).exists());
+        }
+
+        //when
+        CompilationService.compile(botEntities, ApplicationVariables.UTPATH);
+
+        //then
+        for (BotEntity botEntity : botEntities) {
+            assertTrue( new File(ApplicationVariables.UTPATH +"\\"+botEntity.getClassName()).exists());
+        }
+
     }
 }

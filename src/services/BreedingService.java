@@ -11,24 +11,29 @@ import java.util.*;
 public class BreedingService {
 
     static Comparator<BotEntity> fitnessComparator;
-    static int crossoverFreq = 9;
+    static int crossoverFreq = 9, memberGeneration = 0;
     static MeosisService meosisService;
 
-
-    public BreedingService() {
-        meosisService = new MeosisService();
-    }
-
-    public static ArrayList<BotEntity> createNewGeneration(BotEntity[] oldGeneration){
+    public static BotEntity[] createNewGeneration(BotEntity[] oldGeneration){
         // add each of the survivors of the old generation
 
-        ArrayList<BotEntity> newGeneration = new ArrayList<>();
+        BotEntity[] newGeneration = new BotEntity[ECRunner.POP_SIZE];
 
-        ArrayList<BotEntity> survivors = (ArrayList<BotEntity>) Arrays.asList(returnParents(oldGeneration));
+        for (BotEntity botEntity : oldGeneration) {
+            botEntity.setSurvivor(false);
+        }
+
+        memberGeneration = oldGeneration[0].getMemberGen() + 1;
+
+        BotEntity[] survivors = returnParents(oldGeneration);
 
         // add all of the survivors to the new generation
-        for (BotEntity botEntity : survivors) {
-            newGeneration.add(botEntity);
+        for (int i = 0; i < survivors.length; i++) {
+            survivors[i].setMemberGen(memberGeneration);
+            survivors[i].setMemberID(i);
+            survivors[i].setSurvivor(true);
+            survivors[i].setBotName();
+            newGeneration[i] = survivors[i];
         }
 
         // create and add children
@@ -37,21 +42,29 @@ public class BreedingService {
         return newGeneration;
     }
 
-    static ArrayList<BotEntity> addChildren(ArrayList<BotEntity> survivors, ArrayList<BotEntity> newGeneration) {
+    static BotEntity[] addChildren(BotEntity[] survivors, BotEntity[] newGeneration) {
         Random randy = new Random();
         int parentSelector1 = 0;
         int parentSelector2 = 0;
-        do {
+
+
+        for (int i = 0; i < newGeneration.length - survivors.length; i++) {
             while(parentSelector1 == parentSelector2) {
-                parentSelector1 = randy.nextInt(survivors.size());
-                parentSelector2 = randy.nextInt(survivors.size());
+                parentSelector1 = randy.nextInt(survivors.length);
+                parentSelector2 = randy.nextInt(survivors.length);
             }
 
-            BotEntity offspring = new BotEntity(0,0);
-            offspring.setGenome(doMeosis(survivors.get(parentSelector1), survivors.get(parentSelector2)));
+            BotEntity offspring = new BotEntity(memberGeneration,survivors.length+i);
+            offspring.setGenome(doMeosis(survivors[parentSelector1], survivors[parentSelector2]));
+            offspring.setCode();
 
-            newGeneration.add(offspring);
-        } while(newGeneration.size() < ECRunner.POP_SIZE);
+            newGeneration[survivors.length+i] = offspring;
+
+
+            parentSelector1 = 0;
+            parentSelector2 = 0;
+        }
+
 
         return newGeneration;
     }
@@ -83,7 +96,12 @@ public class BreedingService {
     static int[] doMeosis(BotEntity b1, BotEntity b2){
         int[] newGene ;
         Random randy = new Random();
-        newGene = meosisService.positionBasedCrossover(b1,b2, randy.nextInt(5));
+
+        if(meosisService == null){
+            meosisService = new MeosisService();
+        }
+
+        newGene = meosisService.positionBasedCrossover(b1,b2, randy.nextInt(4) + 1);
 
         if(randy.nextInt(crossoverFreq) == 0 ) {
             newGene = meosisService.mutate(newGene, randy.nextInt(5), randy.nextInt(9));

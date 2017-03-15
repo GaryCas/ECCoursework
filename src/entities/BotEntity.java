@@ -16,17 +16,19 @@ public class BotEntity extends Bot {
 
    int memberGen = 0, memberID = 0;
 
-    Random randy;
+    private Random randy;
 
-    String botName = "";
+    private String botName = "";
     String sourceCode = "";
+
+    private boolean isSurvivor = false;
 
     BotEntity.GeneInitialiser geneInitialiser = new BotEntity.GeneInitialiser();
     BotEntity.GeneEvaluator geneEvaluator = new BotEntity.GeneEvaluator();
 
     // Phenome phome
-    String phenotype = "";
-    String code = "";
+    private String phenotype = "";
+    private String code = "";
 
 
     // Genome geneome
@@ -69,7 +71,7 @@ public class BotEntity extends Bot {
 
     @Override
     public void compile() {
-        //botCompiler.Compile();
+        //botCompiler.compile();
     }
 
     public String setCode() {
@@ -81,6 +83,10 @@ public class BotEntity extends Bot {
 
         code = sb.toString();
 
+        return code;
+    }
+
+    public String getCode() {
         return code;
     }
 
@@ -97,10 +103,18 @@ public class BotEntity extends Bot {
         return phenotype;
     }
 
+    public String getPhenotype() {
+        return phenotype;
+    }
+
+    public int getMemberGen() {
+        return memberGen;
+    }
+
     String getClassCode() {
-        GetterService.stringBuilder.append("public class Fire extends Robot {");
-        GetterService.stringBuilder.append("int firePower = 1");
-        GetterService.stringBuilder.append("boolean pause");
+        GetterService.stringBuilder.append("public class " + getBotName() + " extends Robot {");
+        GetterService.stringBuilder.append("int firePower = 1;");
+        GetterService.stringBuilder.append("boolean pause;");
 
         String classCode = GetterService.stringBuilder.toString();
         GetterService.flushSB();
@@ -125,16 +139,43 @@ public class BotEntity extends Bot {
         return memberID;
     }
 
+    public String getFileName() {
+        return botName+".java";
+    }
+
+
+    public String getClassName() {
+        return botName+".class";
+    }
+
+
     public int[] getGenome() {
         return genome;
     }
 
+    public void setMemberGen(int memberGen) {
+        this.memberGen = memberGen;
+    }
 
+    public void setMemberID(int memberID) {
+        this.memberID = memberID;
+    }
+
+    public boolean isSurvivor() {
+        return isSurvivor;
+    }
+
+    public void setSurvivor(boolean survivor) {
+        isSurvivor = survivor;
+    }
+
+    public void setBotName() {
+        this.botName = "botG" + memberGen + "ID"+ memberID;
+    }
 
     void setGeneInitialiser(GeneInitialiser geneInitialiser) {
         this.geneInitialiser = geneInitialiser;
     }
-
 
     public void setGenome(int[] genome) {
         this.genome = genome;

@@ -5,6 +5,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import utils.BotProvider;
 
 import static org.junit.Assert.*;
 
@@ -34,24 +35,49 @@ public class ECRunnerTest {
     @Test
     public void shouldInitGenerationProperlyNames(){
         //given
-        assertEquals(0,ecRunner.newGeneration.size());
+        int length = 0;
+        for (BotEntity botEntity : ecRunner.newGeneration) {
+            if(botEntity != null){
+                length++;
+            }
+        }
+
+        assertEquals(0,length);
+
 
         //when
         ecRunner.initGeneration();
 
         //then
-        for (int i = 0; i < ecRunner.newGeneration.size(); i++) {
-            assertEquals("botG"+i+"ID"+i,ecRunner.newGeneration.get(i).getBotName());
+        for (int i = 0; i < ecRunner.newGeneration.length; i++) {
+            assertEquals("botG"+i+"ID"+i,ecRunner.newGeneration[i].getBotName());
         }
     }
 
     @Test
     public void shouldInitGenerationProperlyGenome(){
         //given
-        assertEquals(0,ecRunner.newGeneration.size());
+        int length = 0;
+        for (BotEntity botEntity : ecRunner.newGeneration) {
+            if(botEntity != null){
+                length++;
+            }
+        }
+
+        assertEquals(0,length);
 
         //when
         ecRunner.initGeneration();
+
+
+        length = 0;
+        for (BotEntity botEntity : ecRunner.newGeneration) {
+            if(botEntity != null){
+                length++;
+            }
+        }
+
+        assertEquals(100,length);
 
         //then
         for (BotEntity botEntity : ecRunner.newGeneration) {

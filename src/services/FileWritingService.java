@@ -1,8 +1,5 @@
 package services;
 
-import entities.ApplicationVariables;
-import entities.BotEntity;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -24,11 +21,11 @@ public class FileWritingService {
     public static void outputRunData(int round, double[] info, String[] filenames, String path){
             // store each variable in its own file (for graphs)
             for (int i = 0; i < info.length; i++) {
-                writeToFile(round, info[i], filenames[i], path);
+                writeStatisticsToFile(round, info[i], filenames[i], path);
             }
     }
 
-    private static void writeToFile(int round, double value, String filename, String path) {
+    private static void writeStatisticsToFile(int round, double value, String filename, String path) {
         try {
             validateFile(filename, path);
         } catch (IOException e) {
@@ -49,6 +46,17 @@ public class FileWritingService {
            file = new File(path+"\\"+filename);
            file.createNewFile();
         }
+
+    }
+
+    public static void writeJavaFile(String code, String fileName, String PATH) {
+        try(FileWriter dataStream = new FileWriter(PATH+"\\"+fileName, true)) {
+            validateFile(fileName, PATH);
+            dataStream.write(code);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
     }
 }

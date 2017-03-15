@@ -1,6 +1,7 @@
 package services;
 
 import entities.ApplicationVariables;
+import entities.BotEntity;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 public class CompilationService {
 
 
-    public static void Compile(String path, String filename) {
+    public static void compile(String path, String filename) {
         try {
             Execute("javac -cp " + ApplicationVariables.JARS + ""+ " " + path+"\\" + filename);
         } catch (Exception e) {
@@ -41,5 +42,14 @@ public class CompilationService {
         }
 
         return  fileNames;
+    }
+
+    public static void compile(BotEntity[] newGeneration, String path) {
+        for (BotEntity botEntity : newGeneration) {
+            FileWritingService.writeJavaFile(botEntity.getCode(), botEntity.getFileName(),path);
+            botEntity.getFileName();
+            compile(ApplicationVariables.PATH, botEntity.getFileName());
+        }
+
     }
 }
