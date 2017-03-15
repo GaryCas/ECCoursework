@@ -112,6 +112,9 @@ public class BotEntity extends Bot {
     }
 
     String getClassCode() {
+        GetterService.stringBuilder.append("package robot;");
+        GetterService.stringBuilder.append("import robocode.*;");
+
         GetterService.stringBuilder.append("public class " + getBotName() + " extends Robot {");
         GetterService.stringBuilder.append("int firePower = 1;");
         GetterService.stringBuilder.append("boolean pause;");

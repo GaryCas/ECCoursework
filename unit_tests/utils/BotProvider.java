@@ -20,7 +20,7 @@ public class BotProvider {
     BotEntity b9;
 
     public BotEntity[] setUpBots() {
-        b0 = new BotEntity(0,1);
+        b0 = new BotEntity(0,0);
         int[] g0 = {0,0,0,0,0,0};
         b0.setFitness(0.0);
         b0.setGenome(g0);

@@ -26,7 +26,17 @@ public class CompilationServiceTest {
             ApplicationVariables.UTPATH+"\\"+"Test2.java",
             ApplicationVariables.UTPATH+"\\"+"test.java"
     };
-    String[] justDeleteFileNames = {ApplicationVariables.UTPATH+"\\"+"test.class"
+    String[] justDeleteFileNames = {ApplicationVariables.UTPATH+"\\"+"test.class",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID0.java",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID1.java",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID2.java",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID3.java",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID4.java",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID5.java",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID6.java",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID7.java",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID8.java",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID9.java"
     };
 
     @Before
