@@ -44,8 +44,10 @@ public class MeosisService {
     }
 
     int[] mutate(int[] newGenome, int position, int randomValue) {
+        // preserve event data
+        int oldGenome = newGenome[position] / 10000;
 
-        newGenome[position] = randomValue;
+        newGenome[position] = oldGenome + randomValue;
         return newGenome;
     }
 }

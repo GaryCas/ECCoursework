@@ -2,54 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb0c42ab-14d9-4914-8192-b5bfc9e5b1a8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/RunStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/SquareMovementAndTrackStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/SquareMovementAndTurnGunALittleStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/SquareMovementAndTurnGunAlotStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/TrackStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/TurnGunRightALittleStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/TurnGunRightAlotStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unit_tests/runners/BattleRunnerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/entities/BotEntity$GeneEvaluator.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/entities/BotEntity$GeneEvaluator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/entities/BotEntity$GeneInitialiser.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/entities/BotEntity$GeneInitialiser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/entities/BotEntity.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/entities/BotEntity.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unit_tests/utils/SampleProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/runners/BattleRunner$BattleObserver.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/runners/BattleRunner$BattleObserver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/runners/BattleRunner.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/runners/BattleRunner.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/services/BreedingService.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/services/BreedingService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/services/CompilationService.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/services/CompilationService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/EventCodeTranslator.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/EventCodeTranslator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/actionstrategies/adjustfirestrategies/AdjustFireStrategy.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/actionstrategies/adjustfirestrategies/AdjustFireStrategy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/actionstrategies/firestrategies/FireNormal.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/actionstrategies/firestrategies/FireNormal.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/actionstrategies/firestrategies/FireStrategy.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/actionstrategies/firestrategies/FireStrategy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/actionstrategies/firestrategies/SmartFire.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/actionstrategies/firestrategies/SmartFire.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/actionstrategies/movementstrategies/SquareMovementStrategy.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/actionstrategies/movementstrategies/SquareMovementStrategy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/actionstrategies/movementstrategies/TurnAndMoveStrategy.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/translation/actionstrategies/movementstrategies/TurnAndMoveStrategy.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/runners/ECRunner$ECExecutor.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/runners/ECRunner$ECExecutor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECCourseworkNew/runners/ECRunner.class" afterPath="$PROJECT_DIR$/out/production/ECCourseworkNew/runners/ECRunner.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/ECCourseworkNew/entities/BotEntityTest.class" afterPath="$PROJECT_DIR$/out/test/ECCourseworkNew/entities/BotEntityTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/ECCourseworkNew/services/BreedingServiceTest.class" afterPath="$PROJECT_DIR$/out/test/ECCourseworkNew/services/BreedingServiceTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/ECCourseworkNew/services/CompilationServiceTest.class" afterPath="$PROJECT_DIR$/out/test/ECCourseworkNew/services/CompilationServiceTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/ECCourseworkNew/translation/actionstrategies/firestrategies/FireNormalTest.class" afterPath="$PROJECT_DIR$/out/test/ECCourseworkNew/translation/actionstrategies/firestrategies/FireNormalTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/ECCourseworkNew/translation/actionstrategies/firestrategies/SmartFireTest.class" afterPath="$PROJECT_DIR$/out/test/ECCourseworkNew/translation/actionstrategies/firestrategies/SmartFireTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/ECCourseworkNew/utils/BotProvider.class" afterPath="$PROJECT_DIR$/out/test/ECCourseworkNew/utils/BotProvider.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/ECCourseworkNew/runners/BattleRunnerTest.class" afterPath="$PROJECT_DIR$/out/test/ECCourseworkNew/runners/BattleRunnerTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/ECCourseworkNew/runners/ECRunnerTest.class" afterPath="$PROJECT_DIR$/out/test/ECCourseworkNew/runners/ECRunnerTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/BotEntity.java" afterPath="$PROJECT_DIR$/src/entities/BotEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApplicationRunner.java" afterPath="$PROJECT_DIR$/src/ApplicationRunner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entities/ApplicationVariables.java" afterPath="$PROJECT_DIR$/src/entities/ApplicationVariables.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/runners/BattleRunner.java" afterPath="$PROJECT_DIR$/src/runners/BattleRunner.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/runners/ECRunner.java" afterPath="$PROJECT_DIR$/src/runners/ECRunner.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/BreedingService.java" afterPath="$PROJECT_DIR$/src/services/BreedingService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/CompilationService.java" afterPath="$PROJECT_DIR$/src/services/CompilationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/translation/EventCodeTranslator.java" afterPath="$PROJECT_DIR$/src/translation/EventCodeTranslator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/translation/actionstrategies/adjustfirestrategies/AdjustFireStrategy.java" afterPath="$PROJECT_DIR$/src/translation/actionstrategies/adjustfirestrategies/AdjustFireStrategy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/translation/actionstrategies/firestrategies/FireNormal.java" afterPath="$PROJECT_DIR$/src/translation/actionstrategies/firestrategies/FireNormal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/translation/actionstrategies/firestrategies/FireStrategy.java" afterPath="$PROJECT_DIR$/src/translation/actionstrategies/firestrategies/FireStrategy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/translation/actionstrategies/firestrategies/SmartFire.java" afterPath="$PROJECT_DIR$/src/translation/actionstrategies/firestrategies/SmartFire.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/translation/actionstrategies/movementstrategies/SquareMovementStrategy.java" afterPath="$PROJECT_DIR$/src/translation/actionstrategies/movementstrategies/SquareMovementStrategy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/translation/actionstrategies/movementstrategies/TurnAndMoveStrategy.java" afterPath="$PROJECT_DIR$/src/translation/actionstrategies/movementstrategies/TurnAndMoveStrategy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/MeosisService.java" afterPath="$PROJECT_DIR$/src/services/MeosisService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_tests/entities/BotEntityTest.java" afterPath="$PROJECT_DIR$/unit_tests/entities/BotEntityTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_tests/services/BreedingServiceTest.java" afterPath="$PROJECT_DIR$/unit_tests/services/BreedingServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_tests/services/CompilationServiceTest.java" afterPath="$PROJECT_DIR$/unit_tests/services/CompilationServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_tests/translation/EventCodeTranslatorTest.java" afterPath="$PROJECT_DIR$/unit_tests/translation/EventCodeTranslatorTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_tests/translation/actionstrategies/firestrategies/FireNormalTest.java" afterPath="$PROJECT_DIR$/unit_tests/translation/actionstrategies/firestrategies/FireNormalTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_tests/translation/actionstrategies/firestrategies/SmartFireTest.java" afterPath="$PROJECT_DIR$/unit_tests/translation/actionstrategies/firestrategies/SmartFireTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_tests/translation/actionstrategies/movementstrategies/SquareMovementStrategyTest.java" afterPath="$PROJECT_DIR$/unit_tests/translation/actionstrategies/movementstrategies/SquareMovementStrategyTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_tests/translation/actionstrategies/movementstrategies/TurnAndMoveStrategyTest.java" afterPath="$PROJECT_DIR$/unit_tests/translation/actionstrategies/movementstrategies/TurnAndMoveStrategyTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_tests/runners/BattleRunnerTest.java" afterPath="$PROJECT_DIR$/unit_tests/runners/BattleRunnerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_tests/runners/ECRunnerTest.java" afterPath="$PROJECT_DIR$/unit_tests/runners/ECRunnerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_tests/utils/BotProvider.java" afterPath="$PROJECT_DIR$/unit_tests/utils/BotProvider.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -82,7 +52,7 @@
     <SUITE FILE_PATH="coverage/ECCoursework$MeosisServiceTest.coverage" NAME="MeosisServiceTest Coverage Results" MODIFIED="1489520443178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>services.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ECCoursework$All_in_ECCourseworkNew.coverage" NAME="All in ECCourseworkNew Coverage Results" MODIFIED="1489720498290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ECCoursework$All_in_ECCourseworkNew.coverage" NAME="All in ECCourseworkNew Coverage Results" MODIFIED="1489728795071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -91,14 +61,55 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <splitter split-orientation="horizontal" split-proportion="0.396875">
+          <splitter split-orientation="horizontal" split-proportion="0.8631743">
             <split-first>
               <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
                 <file leaf-file-name="CompilationServiceTest.java" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/unit_tests/services/CompilationServiceTest.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="249">
-                        <caret line="85" column="7" lean-forward="true" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
+                      <state relative-caret-position="637">
+                        <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="60" selection-end-column="5" />
+                        <folding />
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file leaf-file-name="ECRunnerTest.java" pinned="false" current-in-tab="false">
+                  <entry file="file://$PROJECT_DIR$/unit_tests/runners/ECRunnerTest.java">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="382">
+                        <caret line="160" column="5" lean-forward="true" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
+                        <folding>
+                          <element signature="imports" expanded="true" />
+                          <element signature="method#shouldInitGenerationProperlyNames#0;class#ECRunnerTest#0" expanded="false" />
+                          <element signature="method#shouldInitGenerationProperlyGenome#0;class#ECRunnerTest#0" expanded="false" />
+                        </folding>
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file leaf-file-name="BreedingService.java" pinned="false" current-in-tab="true">
+                  <entry file="file://$PROJECT_DIR$/src/services/BreedingService.java">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="399">
+                        <caret line="107" column="39" lean-forward="true" selection-start-line="107" selection-start-column="39" selection-end-line="107" selection-end-column="39" />
+                        <folding>
+                          <element signature="imports" expanded="true" />
+                          <element signature="docComment;method#returnParents#0;class#BreedingService#0" expanded="false" />
+                          <element signature="method#sortByFitness#0;class#BreedingService#0" expanded="false" />
+                          <element signature="docComment;method#doMeosis#0;class#BreedingService#0" expanded="false" />
+                          <element signature="e#3758#3759#0" expanded="true" />
+                          <element signature="e#3808#3809#0" expanded="true" />
+                        </folding>
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file leaf-file-name="botG1ID0.java" pinned="false" current-in-tab="false">
+                  <entry file="file://C:/robocode/robots/unitTestFolder/botG1ID0.java">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="136">
+                        <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
                         <folding />
                       </state>
                     </provider>
@@ -107,56 +118,35 @@
                 <file leaf-file-name="BattleRunnerTest.java" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/unit_tests/runners/BattleRunnerTest.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="671">
-                        <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+                      <state relative-caret-position="338">
+                        <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
                         <folding>
                           <element signature="imports" expanded="true" />
-                          <element signature="e#3127#3128#0" expanded="true" />
-                          <element signature="e#3181#3182#0" expanded="true" />
+                          <element signature="e#2087#2088#0" expanded="true" />
+                          <element signature="e#2141#2142#0" expanded="true" />
                         </folding>
                       </state>
                     </provider>
                   </entry>
                 </file>
-                <file leaf-file-name="BattleRunner.java" pinned="false" current-in-tab="true">
+                <file leaf-file-name="BattleRunner.java" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/src/runners/BattleRunner.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="433">
-                        <caret line="81" column="71" lean-forward="false" selection-start-line="81" selection-start-column="65" selection-end-line="81" selection-end-column="71" />
-                        <folding />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/unit_tests/utils/Utils.java">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="204">
-                        <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-                        <folding />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="CompilationService.java" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/src/services/CompilationService.java">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="195">
-                        <caret line="16" column="94" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="94" />
-                        <folding />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="Fire.java" pinned="false" current-in-tab="false">
-                  <entry file="file://C:/robocode/robots/sample/Fire.java">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="331">
-                        <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+                      <state relative-caret-position="306">
+                        <caret line="58" column="33" lean-forward="false" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
                         <folding>
-                          <element signature="n#!!doc" expanded="false" />
-                          <element signature="imports" expanded="false" />
+                          <element signature="imports" expanded="true" />
                         </folding>
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file leaf-file-name="botG1ID3.java" pinned="false" current-in-tab="false">
+                  <entry file="file://C:/robocode/robots/unitTestFolder/botG1ID3.java">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="323">
+                        <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+                        <folding />
                       </state>
                     </provider>
                   </entry>
@@ -164,44 +154,8 @@
                 <file leaf-file-name="BotProvider.java" pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/unit_tests/utils/BotProvider.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="184">
-                        <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-                        <folding />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="FileWritingService.java" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/src/services/FileWritingService.java">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="365">
-                        <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-                        <folding />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="BreedingServiceTest.java" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/unit_tests/services/BreedingServiceTest.java">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="127">
-                        <caret line="106" column="9" lean-forward="false" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
-                        <folding>
-                          <element signature="imports" expanded="true" />
-                          <element signature="method#setUp#0;class#BreedingServiceTest#0" expanded="false" />
-                          <element signature="method#shouldCompareCorrectly#0;class#BreedingServiceTest#0" expanded="false" />
-                          <element signature="method#shouldReturnStrongest#0;class#BreedingServiceTest#0" expanded="false" />
-                          <element signature="method#shouldImplementMeosis#0;class#BreedingServiceTest#0" expanded="false" />
-                        </folding>
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="MeosisServiceTest.java" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/unit_tests/services/MeosisServiceTest.java">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="1462">
-                        <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+                      <state relative-caret-position="178">
+                        <caret line="99" column="37" lean-forward="false" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
                         <folding />
                       </state>
                     </provider>
@@ -214,12 +168,12 @@
                 <file leaf-file-name="BattleRunnerTest.java" pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/unit_tests/runners/BattleRunnerTest.java">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="657">
-                        <caret line="143" column="87" lean-forward="false" selection-start-line="143" selection-start-column="87" selection-end-line="143" selection-end-column="87" />
+                      <state relative-caret-position="592">
+                        <caret line="79" column="44" lean-forward="false" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
                         <folding>
                           <element signature="imports" expanded="true" />
-                          <element signature="e#3127#3128#0" expanded="true" />
-                          <element signature="e#3181#3182#0" expanded="true" />
+                          <element signature="e#2087#2088#0" expanded="true" />
+                          <element signature="e#2141#2142#0" expanded="true" />
                         </folding>
                       </state>
                     </provider>
@@ -245,16 +199,6 @@
                     </provider>
                   </entry>
                 </file>
-                <file leaf-file-name="botG0ID1.java" pinned="false" current-in-tab="false">
-                  <entry file="file://C:/robocode/robots/unitTestFolder/botG0ID1.java">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="654">
-                        <caret line="42" column="44" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="1" />
-                        <folding />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
               </leaf>
             </split-second>
           </splitter>
@@ -264,196 +208,112 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7544784">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="BotEntity.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/entities/BotEntity.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="142">
-                  <caret line="259" column="61" lean-forward="false" selection-start-line="259" selection-start-column="61" selection-end-line="259" selection-end-column="61" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#initGenes#0;class#BotEntity#0" expanded="false" />
-                    <element signature="method#initGene#0;class#BotEntity#0" expanded="false" />
-                    <element signature="e#3422#3423#0" expanded="true" />
-                    <element signature="e#3452#3453#0" expanded="true" />
-                    <element signature="e#3774#3775#0" expanded="true" />
-                    <element signature="e#3808#3809#0" expanded="true" />
-                    <element signature="e#3862#3863#0" expanded="true" />
-                    <element signature="e#3908#3909#0" expanded="true" />
-                    <element signature="class#GeneInitialiser#0;class#BotEntity#0" expanded="false" />
-                    <element signature="method#initEventsInt#0;class#GeneInitialiser#0;class#BotEntity#0" expanded="false" />
-                    <element signature="method#getRandom#0;class#GeneInitialiser#0;class#BotEntity#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RunStrategy.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/RunStrategy.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="550">
-                  <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TurnGunRightAlotStrategy.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/TurnGunRightAlotStrategy.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="74" lean-forward="false" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TurnGunRightALittleStrategy.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/TurnGunRightALittleStrategy.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="74" lean-forward="false" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ECRunner.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/runners/ECRunner.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="448">
-                  <caret line="82" column="14" lean-forward="false" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TrackStrategy.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/TrackStrategy.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="TurnAndMoveStrategy.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/movementstrategies/TurnAndMoveStrategy.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="71" lean-forward="false" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="EventCodeTranslator.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/translation/EventCodeTranslator.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="292">
-                  <caret line="23" column="110" lean-forward="false" selection-start-line="23" selection-start-column="110" selection-end-line="23" selection-end-column="110" />
-                  <folding>
-                    <element signature="e#167#168#0" expanded="true" />
-                    <element signature="e#223#224#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CompilationServiceTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/unit_tests/services/CompilationServiceTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="618">
-                  <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="BotEntityTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/unit_tests/entities/BotEntityTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="215">
-                  <caret line="138" column="48" lean-forward="false" selection-start-line="138" selection-start-column="48" selection-end-line="138" selection-end-column="48" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="BattleRunner.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/runners/BattleRunner.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="82" column="8" lean-forward="false" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DecrementFirePowerStrategy.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/adjustfirestrategies/DecrementFirePowerStrategy.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="67" lean-forward="true" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ReflectiveCallable.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SquareMovementStrategyTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/unit_tests/translation/actionstrategies/movementstrategies/SquareMovementStrategyTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="25" column="83" lean-forward="false" selection-start-line="25" selection-start-column="83" selection-end-line="25" selection-end-column="83" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TurnAndMoveStrategyTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/unit_tests/translation/actionstrategies/movementstrategies/TurnAndMoveStrategyTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="25" column="80" lean-forward="false" selection-start-line="25" selection-start-column="80" selection-end-line="25" selection-end-column="80" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="EventCodeTranslatorTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/unit_tests/translation/EventCodeTranslatorTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="147">
-                  <caret line="55" column="62" lean-forward="true" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="BotEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/BotEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-420">
+              <caret line="183" column="16" lean-forward="false" selection-start-line="183" selection-start-column="16" selection-end-line="183" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#initGenes#0;class#BotEntity#0" expanded="false" />
+                <element signature="method#initGene#0;class#BotEntity#0" expanded="false" />
+                <element signature="e#3422#3423#0" expanded="true" />
+                <element signature="e#3452#3453#0" expanded="true" />
+                <element signature="e#3774#3775#0" expanded="true" />
+                <element signature="e#3808#3809#0" expanded="true" />
+                <element signature="e#3862#3863#0" expanded="true" />
+                <element signature="e#3908#3909#0" expanded="true" />
+                <element signature="e#4405#4406#0" expanded="true" />
+                <element signature="e#4471#4472#0" expanded="true" />
+                <element signature="class#GeneInitialiser#0;class#BotEntity#0" expanded="false" />
+                <element signature="method#initEventsInt#0;class#GeneInitialiser#0;class#BotEntity#0" expanded="false" />
+                <element signature="method#getRandom#0;class#GeneInitialiser#0;class#BotEntity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Bot.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/Bot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ECRunner.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/runners/ECRunner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#475#497#0" expanded="false" />
+                <element signature="e#3197#3198#0" expanded="true" />
+                <element signature="e#3231#3232#0" expanded="true" />
+                <element signature="e#3593#3594#0" expanded="true" />
+                <element signature="e#3643#3644#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MeosisService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/MeosisService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="46" column="30" lean-forward="false" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+              <folding>
+                <element signature="method#combineGenes#0;class#MeosisService#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReflectiveCallable.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApplicationRunner.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ApplicationRunner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApplicationVariables.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/ApplicationVariables.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SampleProvider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/unit_tests/utils/SampleProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="557">
+              <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -480,6 +340,8 @@
       <find>.size()</find>
       <find>.get(i)</find>
       <find>getFi</find>
+      <find>set</find>
+      <find>final</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\rd019985\Desktop\ECCourseworkNew\src</dir>
@@ -496,21 +358,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/unit_tests/translation/actionstrategies/adjustfirestrategies/IncrementFirePowerStrategyTest.java" />
-        <option value="$PROJECT_DIR$/src/translation/actionstrategies/adjustfirestrategies/DecrementFirePowerStrategy.java" />
-        <option value="$PROJECT_DIR$/src/translation/actionstrategies/adjustfirestrategies/IncrementFirePowerStrategy.java" />
-        <option value="$PROJECT_DIR$/src/entities/BotCompiler.java" />
-        <option value="$PROJECT_DIR$/unit_tests/Utils.java" />
-        <option value="$PROJECT_DIR$/unit_tests/utils/Utils.java" />
-        <option value="$PROJECT_DIR$/src/services/GetterService.java" />
         <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/unit_tests/services/FileWritingServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/entities/ApplicationVariables.java" />
-        <option value="$PROJECT_DIR$/src/ApplicationRunner.java" />
-        <option value="$PROJECT_DIR$/src/services/MeosisService.java" />
         <option value="$PROJECT_DIR$/unit_tests/services/MeosisServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/runners/ECRunner.java" />
-        <option value="$PROJECT_DIR$/unit_tests/runners/ECRunnerTest.java" />
         <option value="$PROJECT_DIR$/src/services/FileWritingService.java" />
         <option value="$PROJECT_DIR$/src/translation/actionstrategies/firestrategies/FireNormal.java" />
         <option value="$PROJECT_DIR$/src/translation/actionstrategies/firestrategies/SmartFire.java" />
@@ -518,8 +368,6 @@
         <option value="$PROJECT_DIR$/unit_tests/translation/actionstrategies/firestrategies/FireNormalTest.java" />
         <option value="$PROJECT_DIR$/unit_tests/translation/actionstrategies/firestrategies/SmartFireTest.java" />
         <option value="$PROJECT_DIR$/unit_tests/services/CompilationServiceTest.java" />
-        <option value="$PROJECT_DIR$/unit_tests/utils/BotProvider.java" />
-        <option value="$PROJECT_DIR$/src/services/BreedingService.java" />
         <option value="$PROJECT_DIR$/unit_tests/services/BreedingServiceTest.java" />
         <option value="$PROJECT_DIR$/src/translation/actionstrategies/adjustfirestrategies/AdjustFireStrategy.java" />
         <option value="$PROJECT_DIR$/src/translation/actionstrategies/firestrategies/FireStrategy.java" />
@@ -543,10 +391,24 @@
         <option value="$PROJECT_DIR$/unit_tests/translation/actionstrategies/movementstrategies/TurnAndMoveStrategyTest.java" />
         <option value="$PROJECT_DIR$/unit_tests/translation/EventCodeTranslatorTest.java" />
         <option value="$PROJECT_DIR$/src/translation/EventCodeTranslator.java" />
-        <option value="$PROJECT_DIR$/unit_tests/entities/BotEntityTest.java" />
         <option value="$PROJECT_DIR$/src/entities/BotEntity.java" />
+        <option value="$PROJECT_DIR$/unit_tests/entities/BotEntityTest.java" />
         <option value="$PROJECT_DIR$/src/runners/BattleRunner.java" />
+        <option value="$PROJECT_DIR$/unit_tests/utils/SampleProvider.java" />
+        <option value="$PROJECT_DIR$/unit_tests/utils/BotProvider.java" />
+        <option value="$PROJECT_DIR$/src/ApplicationRunner.java" />
         <option value="$PROJECT_DIR$/unit_tests/runners/BattleRunnerTest.java" />
+        <option value="C:/robocode/robots/unitTestFolder/botG1ID0.java" />
+        <option value="C:/robocode/robots/unitTestFolder/botG1ID3.java" />
+        <option value="$PROJECT_DIR$/src/entities/ApplicationVariables.java" />
+        <option value="$PROJECT_DIR$/unit_tests/runners/ECRunnerTest.java" />
+        <option value="$PROJECT_DIR$/src/runners/ECRunner.java" />
+        <option value="C:/robocode/robots/robot/botG1ID1.java" />
+        <option value="C:/robocode/robots/robot/botG1ID3.java" />
+        <option value="C:/robocode/robots/robot/botG3ID3.java" />
+        <option value="C:/robocode/robots/robot/botG2ID2.java" />
+        <option value="$PROJECT_DIR$/src/services/BreedingService.java" />
+        <option value="$PROJECT_DIR$/src/services/MeosisService.java" />
       </list>
     </option>
   </component>
@@ -588,6 +450,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ECCourseworkNew" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ECCoursework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ECCourseworkNew" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unit_tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -652,98 +532,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECCoursework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECCourseworkNew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="translation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECCoursework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECCourseworkNew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="translation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actionstrategies" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECCoursework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECCourseworkNew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="translation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actionstrategies" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="firestrategies" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECCoursework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECCourseworkNew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="translation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actionstrategies" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adjustfirestrategies" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -819,7 +607,7 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/unit_tests/translation" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
   </component>
-  <component name="RunManager" selected="JUnit.BattleRunnerTest.shouldRunBattleWithEvolvingRobots">
+  <component name="RunManager" selected="JUnit.ECRunnerTest.shouldDoECLoop">
     <configuration default="false" name="All in ECCourseworkNew" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="ECCourseworkNew" />
@@ -841,7 +629,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="BattleRunnerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="BattleRunnerTest.shouldRunBattleWithG0Robots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="runners.*" />
@@ -853,33 +641,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="runners" />
       <option name="MAIN_CLASS_NAME" value="runners.BattleRunnerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="BattleRunnerTest.shouldRunBattleBetweenManySamples" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="runners.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ECCourseworkNew" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="runners" />
-      <option name="MAIN_CLASS_NAME" value="runners.BattleRunnerTest" />
-      <option name="METHOD_NAME" value="shouldRunBattleBetweenManySamples" />
+      <option name="METHOD_NAME" value="shouldRunBattleWithG0Robots" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -893,19 +655,19 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="BattleRunnerTest.shouldRunBattleBetweenTwoSamples" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="BotEntityTest.shouldTranslateGenoTypeWith1Actions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="runners.*" />
+          <option name="PATTERN" value="entities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="ECCourseworkNew" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="runners" />
-      <option name="MAIN_CLASS_NAME" value="runners.BattleRunnerTest" />
-      <option name="METHOD_NAME" value="shouldRunBattleBetweenTwoSamples" />
+      <option name="PACKAGE_NAME" value="entities" />
+      <option name="MAIN_CLASS_NAME" value="entities.BotEntityTest" />
+      <option name="METHOD_NAME" value="shouldTranslateGenoTypeWith1Actions" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -919,7 +681,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="BattleRunnerTest.shouldRunBattleWithEvolvingRobots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ECRunnerTest.shouldImplementRunBattle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="runners.*" />
@@ -930,8 +692,34 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="runners" />
-      <option name="MAIN_CLASS_NAME" value="runners.BattleRunnerTest" />
-      <option name="METHOD_NAME" value="shouldRunBattleWithEvolvingRobots" />
+      <option name="MAIN_CLASS_NAME" value="runners.ECRunnerTest" />
+      <option name="METHOD_NAME" value="shouldImplementRunBattle" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ECRunnerTest.shouldDoECLoop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="runners.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ECCourseworkNew" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="runners" />
+      <option name="MAIN_CLASS_NAME" value="runners.ECRunnerTest" />
+      <option name="METHOD_NAME" value="shouldDoECLoop" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1327,18 +1115,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All in ECCourseworkNew" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.BattleRunnerTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.BattleRunnerTest.shouldRunBattleBetweenManySamples" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.BattleRunnerTest.shouldRunBattleBetweenTwoSamples" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.BattleRunnerTest.shouldRunBattleWithEvolvingRobots" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.BattleRunnerTest.shouldRunBattleWithG0Robots" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BotEntityTest.shouldTranslateGenoTypeWith1Actions" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ECRunnerTest.shouldImplementRunBattle" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ECRunnerTest.shouldDoECLoop" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.BattleRunnerTest.shouldRunBattleWithEvolvingRobots" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.All in ECCourseworkNew" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.BattleRunnerTest.shouldRunBattleBetweenTwoSamples" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.BattleRunnerTest.shouldRunBattleBetweenManySamples" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.BattleRunnerTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ECRunnerTest.shouldDoECLoop" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ECRunnerTest.shouldImplementRunBattle" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.All in ECCourseworkNew" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.BotEntityTest.shouldTranslateGenoTypeWith1Actions" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.BattleRunnerTest.shouldRunBattleWithG0Robots" />
       </list>
     </recent_temporary>
   </component>
@@ -1361,44 +1149,44 @@
       <workItem from="1489512667676" duration="10391000" />
       <workItem from="1489579413733" duration="227000" />
       <workItem from="1489582849709" duration="10332000" />
-      <workItem from="1489695305469" duration="18476000" />
+      <workItem from="1489695305469" duration="28401000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_ECCourseworkNew - 2017.03.17 at 03h 09m 51s.xml">
-      <configuration name="All in ECCourseworkNew" configurationId="JUnit" />
+    <history-entry file="ECRunnerTest_shouldDoECLoop - 2017.03.17 at 06h 21m 05s.xml">
+      <configuration name="ECRunnerTest.shouldDoECLoop" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ECCourseworkNew - 2017.03.17 at 03h 15m 10s.xml">
-      <configuration name="All in ECCourseworkNew" configurationId="JUnit" />
+    <history-entry file="ECRunnerTest_shouldDoECLoop - 2017.03.17 at 06h 23m 04s.xml">
+      <configuration name="ECRunnerTest.shouldDoECLoop" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BattleRunnerTest_shouldRunBattleBetweenTwoSamples - 2017.03.17 at 03h 04m 09s.xml">
-      <configuration name="BattleRunnerTest.shouldRunBattleBetweenTwoSamples" configurationId="JUnit" />
+    <history-entry file="ECRunnerTest_shouldDoECLoop - 2017.03.17 at 06h 23m 32s.xml">
+      <configuration name="ECRunnerTest.shouldDoECLoop" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BattleRunnerTest_shouldRunBattleBetweenTwoSamples - 2017.03.17 at 03h 04m 43s.xml">
-      <configuration name="BattleRunnerTest.shouldRunBattleBetweenTwoSamples" configurationId="JUnit" />
+    <history-entry file="ECRunnerTest_shouldDoECLoop - 2017.03.17 at 06h 25m 48s.xml">
+      <configuration name="ECRunnerTest.shouldDoECLoop" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BattleRunnerTest_shouldRunBattleBetweenTwoSamples - 2017.03.17 at 03h 06m 24s.xml">
-      <configuration name="BattleRunnerTest.shouldRunBattleBetweenTwoSamples" configurationId="JUnit" />
+    <history-entry file="ECRunnerTest_shouldDoECLoop - 2017.03.17 at 06h 27m 32s.xml">
+      <configuration name="ECRunnerTest.shouldDoECLoop" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BattleRunnerTest_shouldRunBattleBetweenTwoSamples - 2017.03.17 at 03h 06m 52s.xml">
-      <configuration name="BattleRunnerTest.shouldRunBattleBetweenTwoSamples" configurationId="JUnit" />
+    <history-entry file="ECRunnerTest_shouldDoECLoop - 2017.03.17 at 06h 29m 11s.xml">
+      <configuration name="ECRunnerTest.shouldDoECLoop" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BattleRunnerTest_shouldRunBattleBetweenTwoSamples - 2017.03.17 at 03h 09m 23s.xml">
-      <configuration name="BattleRunnerTest.shouldRunBattleBetweenTwoSamples" configurationId="JUnit" />
+    <history-entry file="ECRunnerTest_shouldDoECLoop - 2017.03.17 at 06h 32m 07s.xml">
+      <configuration name="ECRunnerTest.shouldDoECLoop" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BattleRunnerTest_shouldRunBattleWithEvolvingRobots - 2017.03.17 at 03h 17m 56s.xml">
-      <configuration name="BattleRunnerTest.shouldRunBattleWithEvolvingRobots" configurationId="JUnit" />
+    <history-entry file="ECRunnerTest_shouldDoECLoop - 2017.03.17 at 06h 37m 13s.xml">
+      <configuration name="ECRunnerTest.shouldDoECLoop" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BattleRunnerTest_shouldRunBattleWithEvolvingRobots - 2017.03.17 at 03h 19m 08s.xml">
-      <configuration name="BattleRunnerTest.shouldRunBattleWithEvolvingRobots" configurationId="JUnit" />
+    <history-entry file="ECRunnerTest_shouldDoECLoop - 2017.03.17 at 06h 37m 27s.xml">
+      <configuration name="ECRunnerTest.shouldDoECLoop" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BattleRunnerTest_shouldRunBattleWithEvolvingRobots - 2017.03.17 at 03h 20m 33s.xml">
-      <configuration name="BattleRunnerTest.shouldRunBattleWithEvolvingRobots" configurationId="JUnit" />
+    <history-entry file="ECRunnerTest_shouldDoECLoop - 2017.03.17 at 06h 38m 47s.xml">
+      <configuration name="ECRunnerTest.shouldDoECLoop" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104837000" />
+    <option name="totallyTimeSpent" value="114762000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
@@ -1416,17 +1204,17 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46404496" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46404496" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3269663" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27078652" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27078652" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.00703125" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280899" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20390625" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16484375" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1447,31 +1235,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/services/BreedingService.java</url>
-          <line>131</line>
-          <properties />
-          <option name="timeStamp" value="225" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/services/BreedingService.java</url>
-          <line>99</line>
-          <properties />
-          <option name="timeStamp" value="226" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/unit_tests/services/CompilationServiceTest.java</url>
           <line>108</line>
           <properties />
           <option name="timeStamp" value="229" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/runners/BattleRunner.java</url>
-          <line>76</line>
-          <properties />
-          <option name="timeStamp" value="243" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="250" />
+      <option name="time" value="283" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1480,121 +1250,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/unit_tests/translation/actionstrategies/adjustfirestrategies/AdjustFireStrategyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unit_tests/runners/ECRunnerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="35" column="52" lean-forward="false" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#496#497#0" expanded="false" />
-            <element signature="e#537#538#0" expanded="false" />
-            <element signature="e#594#595#0" expanded="false" />
-            <element signature="e#634#635#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unit_tests/services/MeosisServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/firestrategies/FireNormal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/robocode/robots/sample/Fire.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/firestrategies/SmartFire.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="62" lean-forward="false" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/FileWritingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unit_tests/translation/actionstrategies/firestrategies/FireNormalTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" column="37" lean-forward="false" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="202" column="0" lean-forward="false" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/robocode/libs/robocode.jar!/robocode/control/BattleSpecification.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="24" column="11" lean-forward="false" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/Assert.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="237" column="23" lean-forward="false" selection-start-line="237" selection-start-column="23" selection-end-line="237" selection-end-column="23" />
-          <folding>
-            <element signature="e#8638#8639#0" expanded="true" />
-            <element signature="e#8698#8699#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_55/src.zip!/java/util/Arrays.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="2472" column="26" lean-forward="false" selection-start-line="2472" selection-start-column="26" selection-end-line="2472" selection-end-column="26" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/MeosisService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="method#combineGenes#0;class#MeosisService#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1633,23 +1293,6 @@
         <state relative-caret-position="272">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/BreedingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#returnParents#0;class#BreedingService#0" expanded="false" />
-            <element signature="method#sortByFitness#0;class#BreedingService#0" expanded="false" />
-            <element signature="docComment;method#doMeosis#0;class#BreedingService#0" expanded="false" />
-            <element signature="e#3483#3484#0" expanded="true" />
-            <element signature="e#3519#3520#0" expanded="true" />
-            <element signature="e#3716#3717#0" expanded="true" />
-            <element signature="e#3766#3767#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1705,22 +1348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="74" lean-forward="false" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/TurnGunRightAlotStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="74" lean-forward="false" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/TurnGunRightALittleStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="74" lean-forward="false" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
           <folding />
         </state>
       </provider>
@@ -1808,55 +1435,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unit_tests/entities/BotEntityTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="138" column="48" lean-forward="false" selection-start-line="138" selection-start-column="48" selection-end-line="138" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/RunStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unit_tests/services/CompilationServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/adjustfirestrategies/DecrementFirePowerStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="67" lean-forward="true" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/runners/ECRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="82" column="14" lean-forward="false" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1872,14 +1455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unit_tests/utils/BotProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1900,10 +1475,164 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/RunStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/TurnGunRightALittleStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="74" lean-forward="false" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/translation/actionstrategies/runstrategy/TurnGunRightAlotStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit_tests/entities/BotEntityTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="272" column="161" lean-forward="false" selection-start-line="272" selection-start-column="161" selection-end-line="272" selection-end-column="161" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit_tests/utils/SampleProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit_tests/utils/BotProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="99" column="37" lean-forward="false" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Bot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ApplicationRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/robocode/robots/unitTestFolder/botG1ID0.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit_tests/runners/BattleRunnerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2087#2088#0" expanded="true" />
+            <element signature="e#2141#2142#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit_tests/services/CompilationServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="60" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/robocode/robots/unitTestFolder/botG1ID3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/ApplicationVariables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit_tests/runners/ECRunnerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="160" column="5" lean-forward="true" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#shouldInitGenerationProperlyNames#0;class#ECRunnerTest#0" expanded="false" />
+            <element signature="method#shouldInitGenerationProperlyGenome#0;class#ECRunnerTest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/robocode/robots/robot/botG1ID1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/robocode/robots/robot/botG1ID3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/robocode/robots/robot/botG3ID3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/BotEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="259" column="61" lean-forward="false" selection-start-line="259" selection-start-column="61" selection-end-line="259" selection-end-column="61" />
+        <state relative-caret-position="-420">
+          <caret line="183" column="16" lean-forward="false" selection-start-line="183" selection-start-column="16" selection-end-line="183" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#initGenes#0;class#BotEntity#0" expanded="false" />
@@ -1914,6 +1643,8 @@
             <element signature="e#3808#3809#0" expanded="true" />
             <element signature="e#3862#3863#0" expanded="true" />
             <element signature="e#3908#3909#0" expanded="true" />
+            <element signature="e#4405#4406#0" expanded="true" />
+            <element signature="e#4471#4472#0" expanded="true" />
             <element signature="class#GeneInitialiser#0;class#BotEntity#0" expanded="false" />
             <element signature="method#initEventsInt#0;class#GeneInitialiser#0;class#BotEntity#0" expanded="false" />
             <element signature="method#getRandom#0;class#GeneInitialiser#0;class#BotEntity#0" expanded="false" />
@@ -1921,22 +1652,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/runners/BattleRunner.java">
+    <entry file="file://C:/robocode/robots/robot/botG2ID2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="82" column="8" lean-forward="false" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
+        <state relative-caret-position="59">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unit_tests/runners/BattleRunnerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/runners/BattleRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="143" column="87" lean-forward="false" selection-start-line="143" selection-start-column="87" selection-end-line="143" selection-end-column="87" />
+        <state relative-caret-position="306">
+          <caret line="58" column="33" lean-forward="false" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3127#3128#0" expanded="true" />
-            <element signature="e#3181#3182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/MeosisService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="46" column="30" lean-forward="false" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+          <folding>
+            <element signature="method#combineGenes#0;class#MeosisService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/BreedingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="107" column="39" lean-forward="true" selection-start-line="107" selection-start-column="39" selection-end-line="107" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#returnParents#0;class#BreedingService#0" expanded="false" />
+            <element signature="method#sortByFitness#0;class#BreedingService#0" expanded="false" />
+            <element signature="docComment;method#doMeosis#0;class#BreedingService#0" expanded="false" />
+            <element signature="e#3758#3759#0" expanded="true" />
+            <element signature="e#3808#3809#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/runners/ECRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#475#497#0" expanded="false" />
+            <element signature="e#3197#3198#0" expanded="true" />
+            <element signature="e#3231#3232#0" expanded="true" />
+            <element signature="e#3593#3594#0" expanded="true" />
+            <element signature="e#3643#3644#0" expanded="true" />
           </folding>
         </state>
       </provider>

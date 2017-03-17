@@ -237,7 +237,7 @@ public class BotEntityTest {
         String testString = botEntity.geneEvaluator.translateGene(10111);
 
         //then
-        assertEquals("public void onHitByBullet(HitByBulletEvent e) {System.out.println(\"getOnHitByBulletMethod\");turnLeft(90);ahead(11);this.pause=false;}", testString);
+        assertEquals("public void onHitByBullet(HitByBulletEvent e) {System.out.println(\"getOnHitByBulletMethod\");turnLeft(90);ahead(11);this.pause=false;turnRadarRight(1.0);}", testString);
     }
 
     @Test
@@ -248,7 +248,7 @@ public class BotEntityTest {
         String testString = botEntity.geneEvaluator.translateGene(11111);
 
         //then
-        assertEquals("public void onHitByBullet(HitByBulletEvent e) {System.out.println(\"getOnHitByBulletMethod\");turnLeft(11);ahead(11);this.pause=false;}", testString);
+        assertEquals("public void onHitByBullet(HitByBulletEvent e) {System.out.println(\"getOnHitByBulletMethod\");turnLeft(11);ahead(11);this.pause=false;turnRadarRight(11);}", testString);
     }
 
     @Test
@@ -259,7 +259,7 @@ public class BotEntityTest {
         String testString = botEntity.geneEvaluator.translateGene(20111);
 
         //then
-        assertEquals("public void onHitWall(HitWallEvent e) {System.out.println(\"getOnWallHitMethod\");turnLeft(90);ahead(11);this.pause=false;}", testString);
+        assertEquals("public void onHitWall(HitWallEvent e) {System.out.println(\"getOnWallHitMethod\");turnLeft(90);ahead(11);this.pause=false;turnRadarRight(1.0);}", testString);
     }
 
     @Test
@@ -270,7 +270,7 @@ public class BotEntityTest {
         String testString = botEntity.geneEvaluator.translateGene(21111);
 
         //then
-        assertEquals("public void onHitWall(HitWallEvent e) {System.out.println(\"getOnWallHitMethod\");turnLeft(11);ahead(11);this.pause=false;}", testString);
+        assertEquals("public void onHitWall(HitWallEvent e) {System.out.println(\"getOnWallHitMethod\");turnLeft(11);ahead(11);this.pause=false;turnRadarRight(11);}", testString);
     }
 
     @Test
@@ -362,12 +362,7 @@ public class BotEntityTest {
 
         // when
         String phenotype = botEntity.translateGenotype();
-        String expectedPhenotype = "public void run() {turnLeft(90);ahead(11);this.pause=false;}"
-                +"public void onHitByBullet(HitByBulletEvent e) {turnLeft(90);ahead(11);this.pause=false;}"
-                +"public void onHitWall(HitWallEvent e) {turnLeft(90);ahead(11);this.pause=false;}"
-                +"public void onScannedRobot(ScannedRobotEvent e) {fire(this.firePower);}"
-                +"public void onBulletHit(BulletHitEvent e) {this.firePower = this.firePower++;}"
-                +"public void onBulletMissed(BulletMissedEvent e) {this.firePower = this.firePower++;}";
+        String expectedPhenotype = "public void run() {while(true){turnGunRight(11);}}public void onHitByBullet(HitByBulletEvent e) {System.out.println(\"getOnHitByBulletMethod\");turnLeft(90);ahead(11);this.pause=false;turnRadarRight(1.0);}public void onHitWall(HitWallEvent e) {System.out.println(\"getOnWallHitMethod\");turnLeft(90);ahead(11);this.pause=false;turnRadarRight(1.0);}public void onScannedRobot(ScannedRobotEvent e) {System.out.println(\"getOnScannedRobotMethod\");fire(this.firePower);}public void onBulletHit(BulletHitEvent e) {System.out.println(\"getOnBulletHitMethod\");this.firePower = this.firePower++;}public void onBulletMissed(BulletMissedEvent e) {System.out.println(\"getOnBulletMissedMethod\");this.firePower = this.firePower++;}";
 
         // then
         assertEquals("Phenotype did not translate properly",
@@ -391,12 +386,7 @@ public class BotEntityTest {
 
         // when
         String phenotype = botEntity.translateGenotype();
-        String expectedPhenotype = "public void run() {turnLeft(11);ahead(11);this.pause=false;}"
-                +"public void onHitByBullet(HitByBulletEvent e) {turnLeft(11);ahead(11);this.pause=false;}"
-                +"public void onHitWall(HitWallEvent e) {turnLeft(11);ahead(11);this.pause=false;}"
-                +"public void onScannedRobot(ScannedRobotEvent e) {if(e.getDistance() >11 || getEnergy() < 15){fire(this.firePower);}else if (e.getDistance() > 5) {fire(this.firePower+1);}else{fire(this.firePower+2);}}"
-                +"public void onBulletHit(BulletHitEvent e) {this.firePower = this.firePower--;}"
-                +"public void onBulletMissed(BulletMissedEvent e) {this.firePower = this.firePower--;}";
+        String expectedPhenotype = "public void run() {while(true){turnGunRight(1);}}public void onHitByBullet(HitByBulletEvent e) {System.out.println(\"getOnHitByBulletMethod\");turnLeft(11);ahead(11);this.pause=false;turnRadarRight(11);}public void onHitWall(HitWallEvent e) {System.out.println(\"getOnWallHitMethod\");turnLeft(11);ahead(11);this.pause=false;turnRadarRight(11);}public void onScannedRobot(ScannedRobotEvent e) {System.out.println(\"getOnScannedRobotMethod\");if(e.getDistance() >11 || getEnergy() < 15){fire(this.firePower);}else if (e.getDistance() > 5) {fire(this.firePower+1);}else{fire(this.firePower+2);}}public void onBulletHit(BulletHitEvent e) {System.out.println(\"getOnBulletHitMethod\");this.firePower = this.firePower--;}public void onBulletMissed(BulletMissedEvent e) {System.out.println(\"getOnBulletMissedMethod\");this.firePower = this.firePower--;}";
 
         // then
         assertEquals("Phenotype did not translate properly",

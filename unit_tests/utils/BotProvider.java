@@ -7,7 +7,7 @@ import entities.BotEntity;
  */
 public class BotProvider {
 
-    BotEntity[] botEntities = new BotEntity[10];
+    BotEntity[] botEntities ;
     BotEntity b0;
     BotEntity b1;
     BotEntity b2;
@@ -20,6 +20,8 @@ public class BotProvider {
     BotEntity b9;
 
     public BotEntity[] setUpBots() {
+        botEntities = new BotEntity[10];
+
         b0 = new BotEntity(0,0);
         int[] g0 = {2222,10000,20000,30000,40000,50000};
         b0.setFitness(0.0);
@@ -90,6 +92,41 @@ public class BotProvider {
         botEntities[7] = b7;
         botEntities[8] = b8;
         botEntities[9] = b9;
+
+        return botEntities;
+    }
+
+    public BotEntity[] setUpBotsMini() {
+        botEntities = new BotEntity[4];
+
+        b0 = new BotEntity(0,0);
+        int[] g0 = {2222,10000,20000,30000,40000,50000};
+        b0.setFitness(0.0);
+        b0.setGenome(g0);
+        b0.setCode();
+
+        b1 = new BotEntity(0,1);
+        int[] g1 = {1111,11111,21111,31111,41111,51111};
+        b1.setFitness(1.0);
+        b1.setGenome(g1);
+        b1.setCode();
+
+        b2 = new BotEntity(0,2);
+        int[] g2 = {2222,12222,22222,32222,42222,52222};
+        b2.setFitness(0.9);
+        b2.setGenome(g2);
+        b2.setCode();
+
+        b3 = new BotEntity(0,3);
+        int[] g3 = {3333,13333,23333,33333,43333,53333};
+        b3.setFitness(2.0);
+        b3.setGenome(g3);
+        b3.setCode();
+
+        botEntities[0] = b0;
+        botEntities[1] = b1;
+        botEntities[2] = b2;
+        botEntities[3] = b3;
 
         return botEntities;
     }

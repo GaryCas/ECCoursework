@@ -1,7 +1,6 @@
 package runners;
 
 import robocode.BattleResults;
-import robocode.Robot;
 import robocode.control.BattleSpecification;
 import robocode.control.BattlefieldSpecification;
 import robocode.control.RobocodeEngine;
@@ -43,12 +42,13 @@ public class BattleRunner {
         }
     }
 
-    public double[] runOneOnOneBattle(String bots[], String samples[], int rounds) {
+    public BattleResults[] runOneOnOneBattle(String bots[], String samples[], int rounds) {
         engine = getEngine();
         double fitnesses[] = new double[bots.length];
 
         String bot, opponent;
         BattleResults[] results;
+        BattleResults[] totalResults = new BattleResults[bots.length];
 
         System.out.println("Running battles against sample batch");
         for (int i = 0; i < bots.length; i++) {
@@ -68,19 +68,72 @@ public class BattleRunner {
                 // orginal -- double roundFitness = (botScore + BATTLE_HANDICAP)/(totalScore+BATTLE_HANDICAP);
                 double roundFitness = (botScore) / (totalScore);
 
+                totalResults[i] = results[myBot];
+
                 fitnessScore += roundFitness;
             }
             fitnesses[i] = fitnessScore / samples.length;    // take average of each round score
 
         }
 
-        return fitnesses;
+        return sortResults(totalResults);
+    }
+
+    public void runManytoManyBattles(int rounds, String... bots) {
+        engine = getEngine();
+
+        BattleResults[] results;
+
+        System.out.println("Running battles against sample batch");
+
+        results = runBattle(engine, rounds, bots);
+
+        results = sortResults(results);
+
+        for (BattleResults i : results) {
+            System.out.println(i);
+        }
+
+        // take average of each round score
+}
+
+    private BattleResults[] sortResults(BattleResults[] results) {
+        BattleResults temp;
+
+        for (int i = 0; i < results.length ; i++) {
+            for (int j = 1; j < results.length; j++) {
+
+                if (results[j - 1].getScore() < results[j].getScore()) {
+                    temp = results[j - 1];
+                    results[j - 1] = results[j];
+                    results[j] = temp;
+                }
+            }
+        }
+
+        return results;
+    }
+
+    private BattleResults[] runBattle(RobocodeEngine engine, int rounds, String[] bots) {
+        StringBuilder sb = new StringBuilder();
+        for (String bot : bots) {
+            sb.append(bot + ", ");
+        }
+
+        String allBots = sb.toString();
+
+        RobotSpecification[] selectedBots = engine.getLocalRepository(allBots);
+        BattleSpecification battleSpec = new BattleSpecification(rounds, battlefield, selectedBots);
+
+        engine.runBattle(battleSpec, true);
+
+        return battleObserver.getResults();
     }
 
     private BattleResults[] runBattle(RobocodeEngine engine, int rounds, String bot, String opponent) {
         RobotSpecification[] selectedBots = engine.getLocalRepository(bot + ", " + opponent);
         BattleSpecification battleSpec = new BattleSpecification(rounds, battlefield, selectedBots);
-        engine.setVisible(true);
+        //engine.setVisible(true);
         engine.runBattle(battleSpec, true);
 
         return battleObserver.getResults();
@@ -92,7 +145,7 @@ public class BattleRunner {
      * @return
      */
     public RobocodeEngine getEngine() {
-        if(engine == null){
+        if (engine == null) {
             engine = new RobocodeEngine(new java.io.File("C:/Robocode"));
         }
         return engine;

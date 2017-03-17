@@ -2,8 +2,10 @@ package runners;
 
 import entities.ApplicationVariables;
 import entities.BotEntity;
+import robocode.BattleResults;
 import services.BreedingService;
 import services.CompilationService;
+import services.FileWritingService;
 
 /**
  * Created by rd019985 on 01/03/2017.
@@ -36,27 +38,32 @@ public class ECRunner {
             ROUNDS = 5;
 
     String botNames[] = new String[POP_SIZE];
+    BattleRunner arena = new BattleRunner();
 
     BotEntity[] currentGeneration = new BotEntity[POP_SIZE];
     BotEntity[] newGeneration = new BotEntity[POP_SIZE];
 
-    public void ECLoop() {
+    public void ECLoop(String path) {
         // -- EC loop
         while(genCount < MAX_GENS){
-
+            // set the current generation
             currentGeneration = newGeneration;
 
+            // create the new generation
             newGeneration = BreedingService.createNewGeneration(currentGeneration);
 
+            // compile the new children
+            CompilationService.compile(newGeneration, path);
 
-            CompilationService.compile(newGeneration, ApplicationVariables.PATH);
+            String[] genBots = getGenbotNames(newGeneration);
 
             // run battle between the rivals batch and new generation
-                // scoreFitnessOnSet(rivalsBatch1);
+            runBattle(genBots, rivalsBatch1);
 
             // calculate fitness of each bot
                 // calclateFitness(newGeneration)
 
+            // write to file
 
 //            System.out.println("\nROUND " + genCount
 //                    + "\nAvg. Fitness:\t" + avgFitness + "\t Avg # of nodes: "+avgNumNodes[genCount]
@@ -68,6 +75,15 @@ public class ECRunner {
         }
     }
 
+    String[] getGenbotNames(BotEntity[] newGeneration) {
+        String[] genBotNames = new String[newGeneration.length];
+        for (int i = 0; i < genBotNames.length; i++) {
+            genBotNames[i] = newGeneration[i].getPackageName() + "."+ newGeneration[i].getBotName() + "*";
+        }
+
+        return genBotNames;
+    }
+
     public void initGeneration() {
             for (int i = 0; i < POP_SIZE; i++) {
                 newGeneration[i] = new BotEntity(i, i);
@@ -77,10 +93,12 @@ public class ECRunner {
             }
     }
 
-    private void scoreFitnessOnSet(String[] sampleSet){
-        // generate battle between member and opponents from samples package
-        BattleRunner arena = new BattleRunner();
-        arena.runOneOnOneBattle(botNames, sampleSet, ROUNDS);
+    BattleResults[] runBattle(String[] bots, String[] sampleSet){
+        return arena.runOneOnOneBattle(bots, sampleSet, ROUNDS);
+    }
+
+    public void setArena(BattleRunner arena) {
+        this.arena = arena;
     }
 
     public BotEntity[] getCurrentGeneration() {

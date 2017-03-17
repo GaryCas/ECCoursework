@@ -1,3 +1,4 @@
+import entities.ApplicationVariables;
 import entities.BotEntity;
 import runners.ECRunner;
 
@@ -22,7 +23,7 @@ public class ApplicationRunner {
         ecRunner.initGeneration();
 
         // run the main ECLoop
-        ecRunner.ECLoop();
+        ecRunner.ECLoop(ApplicationVariables.PATH);
     }
 
 

@@ -17,7 +17,7 @@ public class BreedingService {
     public static BotEntity[] createNewGeneration(BotEntity[] oldGeneration){
         // add each of the survivors of the old generation
 
-        BotEntity[] newGeneration = new BotEntity[ECRunner.POP_SIZE];
+        BotEntity[] newGeneration = new BotEntity[oldGeneration.length];
 
         for (BotEntity botEntity : oldGeneration) {
             botEntity.setSurvivor(false);
@@ -33,6 +33,7 @@ public class BreedingService {
             survivors[i].setMemberID(i);
             survivors[i].setSurvivor(true);
             survivors[i].setBotName();
+            survivors[i].setCode();
             newGeneration[i] = survivors[i];
         }
 
@@ -104,7 +105,7 @@ public class BreedingService {
         newGene = meosisService.positionBasedCrossover(b1,b2, randy.nextInt(4) + 1);
 
         if(randy.nextInt(crossoverFreq) == 0 ) {
-            newGene = meosisService.mutate(newGene, randy.nextInt(5), randy.nextInt(9));
+            newGene = meosisService.mutate(newGene, randy.nextInt(5), randy.nextInt(9999));
         }
 
         return newGene;
