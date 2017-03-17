@@ -12,6 +12,7 @@ public class TurnAndMoveStrategy extends MovementStrategy {
         GetterService.stringBuilder.append("turnLeft("+largeValue+");");
         GetterService.stringBuilder.append("ahead("+largeValue * smallValue+");");
         GetterService.stringBuilder.append("this.pause=false;");
+        GetterService.stringBuilder.append("turnRadarRight("+largeValue+");");
 
         return GetterService.stringBuilder.toString();
     }

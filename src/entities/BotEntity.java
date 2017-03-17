@@ -6,6 +6,7 @@ import translation.actionstrategies.BehaviourStrategy;
 import translation.actionstrategies.adjustfirestrategies.AdjustFireStrategy;
 import translation.actionstrategies.firestrategies.FireStrategy;
 import translation.actionstrategies.movementstrategies.MovementStrategy;
+import translation.actionstrategies.runstrategy.RunStrategy;
 
 import java.util.Random;
 
@@ -19,6 +20,7 @@ public class BotEntity extends Bot {
     private Random randy;
 
     private String botName = "";
+    private String packageName = "";
     String sourceCode = "";
 
     private boolean isSurvivor = false;
@@ -37,14 +39,13 @@ public class BotEntity extends Bot {
     int e = -10000;
     int geneCounter = 0;
 
-    public String fileName;
-
     private double fitness;
 
     public BotEntity(int memberGen, int memberID) {
         this.memberGen = memberGen;
         this.memberID = memberID;
         this.botName = "botG" + memberGen + "ID"+ memberID;
+        this.packageName = "robot";
 
         BotEntity.GeneInitialiser geneInitialiser = new BotEntity.GeneInitialiser();
         BotEntity.GeneEvaluator geneEvaluator = new BotEntity.GeneEvaluator();
@@ -118,6 +119,7 @@ public class BotEntity extends Bot {
         GetterService.stringBuilder.append("public class " + getBotName() + " extends Robot {");
         GetterService.stringBuilder.append("int firePower = 1;");
         GetterService.stringBuilder.append("boolean pause;");
+        GetterService.stringBuilder.append("int gunTurnAmt = 10;");
 
         String classCode = GetterService.stringBuilder.toString();
         GetterService.flushSB();
@@ -146,6 +148,13 @@ public class BotEntity extends Bot {
         return botName+".java";
     }
 
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
 
     public String getClassName() {
         return botName+".class";
@@ -245,7 +254,7 @@ public class BotEntity extends Bot {
 
             switch (eventNBase){
                 case 0:
-                    behaviourStrategy = MovementStrategy.evaluateAction(actionNBase);
+                    behaviourStrategy = RunStrategy.evaluateAction(actionNBase);
                     break;
                 case 10000:
                     behaviourStrategy = MovementStrategy.evaluateAction(actionNBase);

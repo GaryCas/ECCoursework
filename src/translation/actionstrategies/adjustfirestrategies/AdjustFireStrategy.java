@@ -16,6 +16,8 @@ public abstract class AdjustFireStrategy extends BehaviourStrategy {
     }
 
     public static AdjustFireStrategy evaluateAction(int action){
+        System.out.println();
+
         switch (action){
             case 0:
                 return new IncrementFirePowerStrategy();

@@ -24,7 +24,7 @@ public class SmartFireTest {
         String testString = smartFire.translateAction(100, 9);
 
         // then
-        assertEquals("if(robotDistance >100 || getEnergy() < 15){fire(this.firePower);}else if (robotDistance > 50) {fire(this.firePower+1);}else{fire(this.firePower+2);}", testString);
+        assertEquals("if(e.getDistance() >100 || getEnergy() < 15){fire(this.firePower);}else if (e.getDistance() > 50) {fire(this.firePower+1);}else{fire(this.firePower+2);}", testString);
     }
 
     @Test
@@ -35,6 +35,6 @@ public class SmartFireTest {
         String testString = smartFire.translateAction(200, 9);
 
         // then
-        assertEquals("if(robotDistance >200 || getEnergy() < 15){fire(this.firePower);}else if (robotDistance > 100) {fire(this.firePower+1);}else{fire(this.firePower+2);}", testString);
+        assertEquals("if(e.getDistance() >200 || getEnergy() < 15){fire(this.firePower);}else if (e.getDistance() > 100) {fire(this.firePower+1);}else{fire(this.firePower+2);}", testString);
     }
 }

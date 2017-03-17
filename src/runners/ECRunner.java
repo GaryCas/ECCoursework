@@ -4,11 +4,6 @@ import entities.ApplicationVariables;
 import entities.BotEntity;
 import services.BreedingService;
 import services.CompilationService;
-import services.FileWritingService;
-
-import java.util.ArrayList;
-
-import static javafx.scene.input.KeyCode.T;
 
 /**
  * Created by rd019985 on 01/03/2017.
@@ -85,7 +80,7 @@ public class ECRunner {
     private void scoreFitnessOnSet(String[] sampleSet){
         // generate battle between member and opponents from samples package
         BattleRunner arena = new BattleRunner();
-        arena.runBatchWithSamples(botNames, sampleSet, ROUNDS);
+        arena.runOneOnOneBattle(botNames, sampleSet, ROUNDS);
     }
 
     public BotEntity[] getCurrentGeneration() {

@@ -16,6 +16,7 @@ public abstract class FireStrategy extends BehaviourStrategy{
     }
 
     public static FireStrategy evaluateAction(int action){
+
         switch (action){
             case 0:
                 return new FireNormal();

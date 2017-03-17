@@ -36,19 +36,28 @@ public class CompilationServiceTest {
             ApplicationVariables.UTPATH+"\\"+"botG0ID6.java",
             ApplicationVariables.UTPATH+"\\"+"botG0ID7.java",
             ApplicationVariables.UTPATH+"\\"+"botG0ID8.java",
-            ApplicationVariables.UTPATH+"\\"+"botG0ID9.java"
+            ApplicationVariables.UTPATH+"\\"+"botG0ID9.java",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID0.class",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID1.class",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID2.class",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID3.class",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID4.class",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID5.class",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID6.class",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID7.class",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID8.class",
+            ApplicationVariables.UTPATH+"\\"+"botG0ID9.class"
     };
 
     @Before
     public void setUp() throws IOException {
         Utils.createFiles(testFileNames);
-        Utils.deleteFiles(justDeleteFileNames);
     }
 
     @After
     public void tearDown(){
         Utils.deleteFiles(testFileNames);
-
+        Utils.deleteFiles(justDeleteFileNames);
     }
 
     @Test
@@ -86,7 +95,6 @@ public class CompilationServiceTest {
     @Test
     public void shouldCompileBots() throws IOException {
         // given
-        assertFalse( new File(ApplicationVariables.UTPATH +"\\"+"test.class").exists());
         BotProvider botProvider = new BotProvider();
         BotEntity[] botEntities = botProvider.setUpBots();
 

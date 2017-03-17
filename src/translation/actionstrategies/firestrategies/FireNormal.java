@@ -8,7 +8,7 @@ import services.GetterService;
 public class FireNormal extends FireStrategy {
     @Override
     public String translateAction(int distance, int power) {
-        GetterService.stringBuilder.append("fire(this.firepower);");
+        GetterService.stringBuilder.append("fire(this.firePower);");
 
         return GetterService.stringBuilder.toString();
     }

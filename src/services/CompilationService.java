@@ -48,7 +48,7 @@ public class CompilationService {
         for (BotEntity botEntity : newGeneration) {
             FileWritingService.writeJavaFile(botEntity.getCode(), botEntity.getFileName(),path);
             botEntity.getFileName();
-            compile(ApplicationVariables.PATH, botEntity.getFileName());
+            compile(path, botEntity.getFileName());
         }
 
     }

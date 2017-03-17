@@ -1,11 +1,11 @@
-package translation.actionstrategies.movementstrategies;
+package translation.actionstrategies.runstrategy;
 
 import services.GetterService;
 
 /**
- * Created by rd019985 on 03/03/2017.
+ * Created by rd019985 on 17/03/2017.
  */
-public class SquareMovementStrategy extends MovementStrategy {
+public class SquareMovementAndTurnGunALittleStrategy  extends RunStrategy {
 
     @Override
     public String translateAction(int largeValue, int smallValue) {
@@ -13,6 +13,7 @@ public class SquareMovementStrategy extends MovementStrategy {
         GetterService.stringBuilder.append("ahead("+largeValue * smallValue+");");
         GetterService.stringBuilder.append("this.pause=false;");
         GetterService.stringBuilder.append("turnRadarRight(1.0);");
+        GetterService.stringBuilder.append("turnGunRight("+smallValue+");}");
 
         return GetterService.stringBuilder.toString();
     }

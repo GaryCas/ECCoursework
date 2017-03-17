@@ -23,7 +23,7 @@ public class SquareMovementStrategyTest {
         String testString = squareMovementStrategy.translateAction(100, 9);
 
         // then
-        assertEquals("turnLeft(90);ahead(900);this.pause=false;", testString);
+        assertEquals("turnLeft(90);ahead(900);this.pause=false;turnRadarRight(1.0);", testString);
     }
 
     @Test
@@ -34,6 +34,6 @@ public class SquareMovementStrategyTest {
         String testString = squareMovementStrategy.translateAction(10, 9);
 
         // then
-        assertEquals("turnLeft(90);ahead(90);this.pause=false;", testString);
+        assertEquals("turnLeft(90);ahead(90);this.pause=false;turnRadarRight(1.0);", testString);
     }
 }

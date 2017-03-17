@@ -23,7 +23,7 @@ public class TurnAndMoveStrategyTest {
         String testString = turnAndMoveStrategy.translateAction(90, 9);
 
         // then
-        assertEquals("turnLeft(90);ahead(810);this.pause=false;", testString);
+        assertEquals("turnLeft(90);ahead(810);this.pause=false;turnRadarRight(90);", testString);
     }
 
     @Test
@@ -34,6 +34,6 @@ public class TurnAndMoveStrategyTest {
         String testString = turnAndMoveStrategy.translateAction(10, 9);
 
         // then
-        assertEquals("turnLeft(10);ahead(90);this.pause=false;", testString);
+        assertEquals("turnLeft(10);ahead(90);this.pause=false;turnRadarRight(10);", testString);
     }
 }

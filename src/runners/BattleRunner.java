@@ -43,7 +43,7 @@ public class BattleRunner {
         }
     }
 
-    public double[] runBatchWithSamples(String bots[], String samples[], int rounds) {
+    public double[] runOneOnOneBattle(String bots[], String samples[], int rounds) {
         engine = getEngine();
         double fitnesses[] = new double[bots.length];
 
@@ -58,11 +58,8 @@ public class BattleRunner {
                 bot = bots[i];
                 opponent = samples[j];
 
-                RobotSpecification[] selectedBots = engine.getLocalRepository(bot + ", " + opponent);
-                BattleSpecification battleSpec = new BattleSpecification(rounds, battlefield, selectedBots);
-                engine.runBattle(battleSpec, true);
+                results = runBattle(engine, rounds, bot, opponent);
 
-                results = battleObserver.getResults();
                 int myBot = (results[0].getTeamLeaderName().equals(bots[i]) ? 0 : 1);
                 int opBot = (myBot == 1 ? 0 : 1);
                 int botScore = results[myBot].getScore();
@@ -78,6 +75,15 @@ public class BattleRunner {
         }
 
         return fitnesses;
+    }
+
+    private BattleResults[] runBattle(RobocodeEngine engine, int rounds, String bot, String opponent) {
+        RobotSpecification[] selectedBots = engine.getLocalRepository(bot + ", " + opponent);
+        BattleSpecification battleSpec = new BattleSpecification(rounds, battlefield, selectedBots);
+        engine.setVisible(true);
+        engine.runBattle(battleSpec, true);
+
+        return battleObserver.getResults();
     }
 
     /**

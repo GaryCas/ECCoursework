@@ -119,6 +119,10 @@ public class BreedingService {
         };
     }
 
+    public static MeosisService getMeosisService() {
+        return meosisService;
+    }
+
     // setters for unit tests
     void setCrossoverFreq(int crossoverFreq) {
         BreedingService.crossoverFreq = crossoverFreq;

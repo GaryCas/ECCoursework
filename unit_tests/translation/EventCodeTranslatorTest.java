@@ -20,7 +20,7 @@ public class EventCodeTranslatorTest {
         String testString = eventCodeTranslator.getRunCode();
 
         //then
-        assertEquals("public void run() {", testString);
+        assertEquals("public void run() {while(true){", testString);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class EventCodeTranslatorTest {
         String testString = eventCodeTranslator.getOnBulletHitMethod();
 
         //then
-        assertEquals("public void onBulletHit(BulletHitEvent e) {", testString);
+        assertEquals("public void onBulletHit(BulletHitEvent e) {System.out.println(\"getOnBulletHitMethod\");", testString);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class EventCodeTranslatorTest {
         String testString = eventCodeTranslator.getOnBulletMissedMethod();
 
         //then
-        assertEquals("public void onBulletMissed(BulletMissedEvent e) {", testString);
+        assertEquals("public void onBulletMissed(BulletMissedEvent e) {System.out.println(\"getOnBulletMissedMethod\");", testString);
     }
 
     @Test
@@ -56,7 +56,7 @@ public class EventCodeTranslatorTest {
         String testString = eventCodeTranslator.getOnHitByBulletMethod();
 
         //then
-        assertEquals("public void onHitByBullet(HitByBulletEvent e) {", testString);
+        assertEquals("public void onHitByBullet(HitByBulletEvent e) {System.out.println(\"getOnHitByBulletMethod\");", testString);
     }
 
 
@@ -69,7 +69,7 @@ public class EventCodeTranslatorTest {
         String testString = eventCodeTranslator.getOnScannedRobotMethod();
 
         //then
-        assertEquals("public void onScannedRobot(ScannedRobotEvent e) {", testString);
+        assertEquals("public void onScannedRobot(ScannedRobotEvent e) {System.out.println(\"getOnScannedRobotMethod\");", testString);
     }
 
     @Test
@@ -81,6 +81,6 @@ public class EventCodeTranslatorTest {
         String testString = eventCodeTranslator.getOnWallHitMethod();
 
         //then
-        assertEquals("public void onHitWall(HitWallEvent e) {", testString);
+        assertEquals("public void onHitWall(HitWallEvent e) {System.out.println(\"getOnWallHitMethod\");", testString);
     }
 }
