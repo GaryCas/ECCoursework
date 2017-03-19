@@ -203,6 +203,7 @@ public class BotEntity extends Bot {
         }
 
         String translateGene(int gene){
+
             int smallValue = extractSmallValue(gene);
             int largeValue = extractLargeValue(gene - smallValue);
             int eventNBase = extractEventNBase(gene);

@@ -14,7 +14,6 @@ import java.io.IOException;
 import static org.junit.Assert.*;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyInt;
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -22,7 +21,8 @@ import static org.mockito.Mockito.verify;
  * Created by rd019985 on 01/03/2017.
  */
 public class ECRunnerTest {
-    static int temp;
+    static int tempPop;
+    private static int tempGens;
     ECRunner ecRunner;
 
 
@@ -52,7 +52,27 @@ public class ECRunnerTest {
             ApplicationVariables.UTPATH+"\\"+"botG0ID6.class",
             ApplicationVariables.UTPATH+"\\"+"botG0ID7.class",
             ApplicationVariables.UTPATH+"\\"+"botG0ID8.class",
-            ApplicationVariables.UTPATH+"\\"+"botG0ID9.class"
+            ApplicationVariables.UTPATH+"\\"+"botG0ID9.class",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID0.java",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID1.java",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID2.java",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID3.java",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID4.java",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID5.java",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID6.java",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID7.java",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID8.java",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID9.java",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID0.class",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID1.class",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID2.class",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID3.class",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID4.class",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID5.class",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID6.class",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID7.class",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID8.class",
+            ApplicationVariables.UTPATH+"\\"+"botG1ID9.class"
     };
 
 
@@ -61,8 +81,10 @@ public class ECRunnerTest {
 
     @BeforeClass
     public static void setUpClass(){
-        temp = ECRunner.POP_SIZE;
-        ECRunner.POP_SIZE = 100;
+        tempPop = ECRunner.POP_SIZE;
+        tempGens = ECRunner.MAX_GENS;
+        ECRunner.MAX_GENS = 100;
+        ECRunner.POP_SIZE = 10;
     }
 
     @Before
@@ -80,7 +102,8 @@ public class ECRunnerTest {
 
     @AfterClass
     public static void tearDownClass(){
-        ECRunner.POP_SIZE = temp;
+        ECRunner.POP_SIZE = tempPop;
+        ECRunner.MAX_GENS = tempGens;
     }
 
     @Test
@@ -154,10 +177,10 @@ public class ECRunnerTest {
         ecRunner.setNewGeneration(botProvider.setUpBots());
 
         //when
-        ecRunner.runBattle(SampleProvider.sittingDucks, ecRunner.getGenbotNames(botProvider.setUpBots()));
+        ecRunner.runBattle(SampleProvider.sittingDucks, ecRunner.getGenbotNames(botProvider.setUpBots()), botProvider.setUpBots());
 
         //then
-        verify(battleRunner, times(1)).runOneOnOneBattle(any(String[].class), any(String[].class), anyInt());
+        verify(battleRunner, times(1)).runOneOnOneBattle(any(String[].class), any(String[].class), anyInt(), (BotEntity[]) any());
     }
 
     @Test
@@ -165,7 +188,7 @@ public class ECRunnerTest {
         //given
         ECRunner ecRunner = new ECRunner();
         BotProvider botProvider = new BotProvider();
-        ecRunner.setNewGeneration(botProvider.setUpBotsMini());
+        ecRunner.setNewGeneration(botProvider.setUpBots());
 
         //when
         ecRunner.ECLoop(ApplicationVariables.ROBOTPATH);

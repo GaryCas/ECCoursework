@@ -1,7 +1,6 @@
 package services;
 
 import entities.BotEntity;
-import runners.ECRunner;
 
 import java.util.*;
 
@@ -11,7 +10,7 @@ import java.util.*;
 public class BreedingService {
 
     static Comparator<BotEntity> fitnessComparator;
-    static int crossoverFreq = 9, memberGeneration = 0;
+    static int mutationFreq = 9, memberGeneration = 0;
     static MeosisService meosisService;
 
     public static BotEntity[] createNewGeneration(BotEntity[] oldGeneration){
@@ -34,6 +33,7 @@ public class BreedingService {
             survivors[i].setSurvivor(true);
             survivors[i].setBotName();
             survivors[i].setCode();
+            survivors[i].setFitness(0.0);
             newGeneration[i] = survivors[i];
         }
 
@@ -104,7 +104,7 @@ public class BreedingService {
 
         newGene = meosisService.positionBasedCrossover(b1,b2, randy.nextInt(4) + 1);
 
-        if(randy.nextInt(crossoverFreq) == 0 ) {
+        if(randy.nextInt(mutationFreq) == 0 ) {
             newGene = meosisService.mutate(newGene, randy.nextInt(5), randy.nextInt(9999));
         }
 
@@ -126,7 +126,7 @@ public class BreedingService {
 
     // setters for unit tests
     void setCrossoverFreq(int crossoverFreq) {
-        BreedingService.crossoverFreq = crossoverFreq;
+        BreedingService.mutationFreq = crossoverFreq;
     }
 
     void setMeosisService(MeosisService meosisService) {

@@ -4,6 +4,7 @@ import entities.BotEntity;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -98,5 +99,32 @@ public class MeosisServiceTest {
         for (int i : actual) {
             assertEquals(actual[i], expected[i]);
         }
+    }
+
+    @Test
+    public void shouldMutateAndRetainEventInfo() {
+        //given
+        int[] g1 = {1111, 21111, 31111, 41111, 51111, 61111};
+        BreedingService.mutationFreq = 1;
+
+        for (int i : g1) {
+            assertEquals(1111, i % 10000);
+        }
+
+        //when then
+        for (int i = 0; i < 10; i++) {
+            for (int j = 1; j < g1.length; j++) {
+                int[] actual = meosisService.mutate(g1, j, 9999);
+
+                assertEquals(actual[j] % 10000, g1[j] % 10000);
+                assertEquals(actual[j] % 10000, 9999);
+
+                // assert that the event information is retained
+                if(j != 1) {
+                    assertEquals(actual[j] / 10000, g1[j] / 10000);
+                }
+            }
+        }
+
     }
 }

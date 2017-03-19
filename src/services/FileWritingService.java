@@ -1,8 +1,11 @@
 package services;
 
+import entities.BotEntity;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Field;
 
 /**
  * Created by rd019985 on 01/03/2017.
@@ -18,10 +21,10 @@ public class FileWritingService {
      * @param avgNode
      * @param bestBotName
      */
-    public static void outputRunData(int round, double[] info, String[] filenames, String path){
+    public static void outputRunData(int round, double[] info, String filename, String path){
             // store each variable in its own file (for graphs)
             for (int i = 0; i < info.length; i++) {
-                writeStatisticsToFile(round, info[i], filenames[i], path);
+                writeStatisticsToFile(round, info[i], filename, path);
             }
     }
 
@@ -57,6 +60,20 @@ public class FileWritingService {
             e.printStackTrace();
         }
 
+
+    }
+
+    public static void writeBot(BotEntity bestSoFar, String title, String PATH, String fileName) {
+        try(FileWriter dataStream = new FileWriter(PATH+"\\"+fileName, true)) {
+            validateFile(fileName, PATH);
+            dataStream.write(title + " \n");
+            dataStream.write("Name " + bestSoFar.getBotName()+ "\n");
+            dataStream.write("Fitness " + bestSoFar.getFitness()+ "\n");
+            dataStream.write("Genome " + bestSoFar.getGenome()+ "\n");
+            dataStream.write("Phenome " + bestSoFar.getPhenotype()+ "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }

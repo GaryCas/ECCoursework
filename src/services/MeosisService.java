@@ -47,7 +47,7 @@ public class MeosisService {
         // preserve event data
         int oldGenome = newGenome[position] / 10000;
 
-        newGenome[position] = oldGenome + randomValue;
+        newGenome[position] = (oldGenome * 10000) + randomValue;
         return newGenome;
     }
 }

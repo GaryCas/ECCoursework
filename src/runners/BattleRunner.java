@@ -1,5 +1,6 @@
 package runners;
 
+import entities.BotEntity;
 import robocode.BattleResults;
 import robocode.control.BattleSpecification;
 import robocode.control.BattlefieldSpecification;
@@ -42,7 +43,7 @@ public class BattleRunner {
         }
     }
 
-    public BattleResults[] runOneOnOneBattle(String bots[], String samples[], int rounds) {
+    public BattleResults[] runOneOnOneBattle(String bots[], String samples[], int rounds, BotEntity[] botEntities) {
         engine = getEngine();
         double fitnesses[] = new double[bots.length];
 
@@ -59,18 +60,23 @@ public class BattleRunner {
                 opponent = samples[j];
 
                 results = runBattle(engine, rounds, bot, opponent);
+                try {
+                    int myBot = (results[0].getTeamLeaderName().equals(bots[i]) ? 0 : 1);
+                    int opBot = (myBot == 1 ? 0 : 1);
+                    int botScore = results[myBot].getScore();
 
-                int myBot = (results[0].getTeamLeaderName().equals(bots[i]) ? 0 : 1);
-                int opBot = (myBot == 1 ? 0 : 1);
-                int botScore = results[myBot].getScore();
+                    double totalScore = botScore + results[opBot].getScore();
+                    // orginal -- double roundFitness = (botScore + BATTLE_HANDICAP)/(totalScore+BATTLE_HANDICAP);
+                    double roundFitness = (botScore) / (totalScore);
 
-                double totalScore = botScore + results[opBot].getScore();
-                // orginal -- double roundFitness = (botScore + BATTLE_HANDICAP)/(totalScore+BATTLE_HANDICAP);
-                double roundFitness = (botScore) / (totalScore);
+                    totalResults[i] = results[myBot];
+                    botEntities[i].setFitness(results[myBot].getScore());
 
-                totalResults[i] = results[myBot];
+                    fitnessScore += roundFitness;
+                } catch (ArrayIndexOutOfBoundsException e){
+                    e.printStackTrace();
+                }
 
-                fitnessScore += roundFitness;
             }
             fitnesses[i] = fitnessScore / samples.length;    // take average of each round score
 

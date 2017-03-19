@@ -47,7 +47,7 @@ public class CompilationService {
     public static void compile(BotEntity[] newGeneration, String path) {
         for (BotEntity botEntity : newGeneration) {
             FileWritingService.writeJavaFile(botEntity.getCode(), botEntity.getFileName(),path);
-            botEntity.getFileName();
+
             compile(path, botEntity.getFileName());
         }
 

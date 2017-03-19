@@ -62,7 +62,7 @@ public class BattleRunnerTest {
 
         // when
         BattleRunner battleRunner = new BattleRunner();
-        BattleResults[] battleResults = battleRunner.runOneOnOneBattle(SampleProvider.tracker, SampleProvider.sittingDuck, ECRunner.ROUNDS);
+        BattleResults[] battleResults = battleRunner.runOneOnOneBattle(SampleProvider.tracker, SampleProvider.sittingDuck, ECRunner.ROUNDS, new BotProvider().setUpBotsMini());
 
         // then
         assertEquals(1, battleResults.length);
@@ -74,7 +74,7 @@ public class BattleRunnerTest {
 
         // when
         BattleRunner battleRunner = new BattleRunner();
-        BattleResults[] actualFitness = battleRunner.runOneOnOneBattle(SampleProvider.trackers, SampleProvider.sittingDucks, 2);
+        BattleResults[] actualFitness = battleRunner.runOneOnOneBattle(SampleProvider.trackers, SampleProvider.sittingDucks, 2, new BotProvider().setUpBotsMini());
 
         // then
         assertEquals(5, actualFitness.length);
@@ -98,7 +98,7 @@ public class BattleRunnerTest {
 
         // when
         BattleRunner battleRunner = new BattleRunner();
-        BattleResults[] battleResults = battleRunner.runOneOnOneBattle(botEntityNames, SampleProvider.sittingDuck, 1);
+        BattleResults[] battleResults = battleRunner.runOneOnOneBattle(botEntityNames, SampleProvider.sittingDuck, 1, botEntities);
 
         // then
         assertEquals(10, battleResults.length);

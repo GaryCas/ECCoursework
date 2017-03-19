@@ -35,7 +35,7 @@ public class FileWritingServiceTest {
         String[] filenames = {"avgFitnessTest.txt", "bestFitnessTest.txt"};
 
         //when
-        FileWritingService.outputRunData(0,info,filenames, ApplicationVariables.UTPATH);
+        FileWritingService.outputRunData(0,info,"avgFitnessTest.txt", ApplicationVariables.UTPATH);
 
         //then
         boolean checkAvg = new File(ApplicationVariables.UTPATH
