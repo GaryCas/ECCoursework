@@ -11,7 +11,7 @@ public class MeosisService {
     // move this to cell reproduction service
 
     // put these into a static service for speed
-    int[] positionBasedCrossover(BotEntity b1, BotEntity b2, int position) {
+    int[] singlePointCrossOver(BotEntity b1, BotEntity b2, int position) {
         int crossoverPoint = position % b1.getGenome().length;
 
         int[] motherGenome =  getMotherGene(b1, crossoverPoint);

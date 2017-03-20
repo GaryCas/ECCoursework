@@ -40,6 +40,7 @@ public class BotEntity extends Bot {
     int geneCounter = 0;
 
     private double fitness;
+    private double percentageFitness;
 
     public BotEntity(int memberGen, int memberID) {
         this.memberGen = memberGen;
@@ -191,6 +192,14 @@ public class BotEntity extends Bot {
 
     public void setGenome(int[] genome) {
         this.genome = genome;
+    }
+
+    public double getPercentageFitness() {
+        return percentageFitness;
+    }
+
+    public void setPercentageFitness(double percentageFitness) {
+        this.percentageFitness = percentageFitness;
     }
 
     // if I can separate these into their own classes then unit tests and setting might be a bit cleaner

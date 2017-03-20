@@ -100,7 +100,7 @@ public class BreedingServiceTest {
         BreedingService.doMeosis(botEntities[0],botEntities[1]);
 
         //then
-       // verify(mockMeosisService).positionBasedCrossover((BotEntity) any(), (BotEntity) any(),anyInt());
+       // verify(mockMeosisService).singlePointCrossOver((BotEntity) any(), (BotEntity) any(),anyInt());
        // verify(mockMeosisService).mutate((int[]) any(), anyInt(), anyInt());
     }
 

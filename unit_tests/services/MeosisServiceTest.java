@@ -26,7 +26,7 @@ public class MeosisServiceTest {
         b2.setGenome(g2);
 
         //when
-        meosisService.positionBasedCrossover(b1,b2,3);
+        meosisService.singlePointCrossOver(b1,b2,3);
 
         //then
     }

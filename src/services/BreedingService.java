@@ -43,24 +43,24 @@ public class BreedingService {
         return newGeneration;
     }
 
-    static BotEntity[] addChildren(BotEntity[] survivors, BotEntity[] newGeneration) {
+    static BotEntity[] addChildren(BotEntity[] parents, BotEntity[] newGeneration) {
         Random randy = new Random();
         int parentSelector1 = 0;
         int parentSelector2 = 0;
 
+        double[] fitnessBenchmark = defineBenchmarkArray(parents);
 
-        for (int i = 0; i < newGeneration.length - survivors.length; i++) {
+        for (int i = 0; i < newGeneration.length - parents.length; i++) {
             while(parentSelector1 == parentSelector2) {
-                parentSelector1 = randy.nextInt(survivors.length);
-                parentSelector2 = randy.nextInt(survivors.length);
+                parentSelector1 = fitnessProportionateSelection(fitnessBenchmark, randy.nextInt(100));
+                parentSelector2 = fitnessProportionateSelection(fitnessBenchmark, randy.nextInt(100));
             }
 
-            BotEntity offspring = new BotEntity(memberGeneration,survivors.length+i);
-            offspring.setGenome(doMeosis(survivors[parentSelector1], survivors[parentSelector2]));
+            BotEntity offspring = new BotEntity(memberGeneration,parents.length+i);
+            offspring.setGenome(doMeosis(parents[parentSelector1], parents[parentSelector2]));
             offspring.setCode();
 
-            newGeneration[survivors.length+i] = offspring;
-
+            newGeneration[parents.length+i] = offspring;
 
             parentSelector1 = 0;
             parentSelector2 = 0;
@@ -68,6 +68,47 @@ public class BreedingService {
 
 
         return newGeneration;
+    }
+
+    public static int fitnessProportionateSelection(double[] benchmark, int randy) {
+        int selector = benchmark.length - 1;
+
+        for (int i = 0; i < benchmark.length - 1; i++) {
+            if(i == 0){
+                if(randy < benchmark[i + 1] && randy > 0){
+                    selector = i;
+                    break;
+                }
+            } else {
+                if (randy < benchmark[i + 1] && randy > benchmark[i]) {
+                    selector = i;
+                    break;
+                }
+            }
+        }
+
+        return selector;
+    }
+
+    public static double[] defineBenchmarkArray(BotEntity[] parents) {
+        double totalFitness = 0.0;
+        double[] benchmarkArray = new double[parents.length];
+
+        for (BotEntity parent : parents) {
+            totalFitness += parent.getFitness();
+        }
+
+        for (int i = 0; i < parents.length; i++) {
+            parents[i].setPercentageFitness((parents[i].getFitness() * 100) / totalFitness);
+        }
+
+        benchmarkArray[0] = 0.0;
+
+        for (int j = 1; j < parents.length ; j++) {
+            benchmarkArray[j] = benchmarkArray[j - 1] + parents[j-1].getPercentageFitness();
+        }
+
+        return benchmarkArray;
     }
 
     /**
@@ -102,7 +143,7 @@ public class BreedingService {
             meosisService = new MeosisService();
         }
 
-        newGene = meosisService.positionBasedCrossover(b1,b2, randy.nextInt(4) + 1);
+        newGene = meosisService.singlePointCrossOver(b1,b2, randy.nextInt(4) + 1);
 
         if(randy.nextInt(mutationFreq) == 0 ) {
             newGene = meosisService.mutate(newGene, randy.nextInt(5), randy.nextInt(9999));

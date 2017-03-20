@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import robocode.BattleResults;
+import services.BreedingService;
 import utils.BotProvider;
 import utils.SampleProvider;
 import utils.Utils;
@@ -127,5 +128,31 @@ public class BattleRunnerTest {
         // then
     }
 
+
+    @Test
+    public void shouldReturnProportionalFitnessBenchmarkArray(){
+        // given
+        BotProvider botProvider = new BotProvider();
+        BotEntity[] botEntities = botProvider.setUpBotsMini();
+        botEntities[0].setFitness(4.0);
+        botEntities[1].setFitness(4.0);
+        botEntities[2].setFitness(2.0);
+        botEntities[3].setFitness(2.0);
+
+        // when
+        double[] results = BreedingService.defineBenchmarkArray(botEntities);
+
+        // then
+        assertEquals(0,(int) results[0]);
+        assertEquals(33,(int) results[1]);
+        assertEquals(66,(int) results[2]);
+        assertEquals(83,(int) results[3]);
+
+        assertEquals(0, BreedingService.fitnessProportionateSelection(results, 5));
+        assertEquals(0, BreedingService.fitnessProportionateSelection(results, 30));
+        assertEquals(1, BreedingService.fitnessProportionateSelection(results, 40));
+        assertEquals(2, BreedingService.fitnessProportionateSelection(results, 70));
+        assertEquals(3, BreedingService.fitnessProportionateSelection(results, 90));
+    }
 
 }

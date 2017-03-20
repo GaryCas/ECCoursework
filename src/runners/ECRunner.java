@@ -84,9 +84,6 @@ public class ECRunner extends Application {
 
         FileWritingService.writeBot(bestSoFar, "best so far", ApplicationVariables.PATH, "bestSoFar.txt");
 
-        setAvgResults(avgResults);
-        setBestResults(bestResults);
-
         launch();
         System.out.println();
     }
